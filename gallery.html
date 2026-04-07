@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Allen & Sons Table Tennis Club</title>
+    <meta
+      name="description"
+      content="Browse photos from Allen & Sons Table Tennis Club in Canoga Park, California."
+    />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="/src/styles/gallery.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="logo">Allen & Sons TTC</a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/coaches.html">Coaches</a></li>
+            <li><a href="/lessons.html">Lessons</a></li>
+            <li><a href="/gallery.html" class="active">Gallery</a></li>
+            <li><a href="/contact.html" class="nav-button">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="about-hero">
+        <div class="about-hero-overlay">
+          <div class="container">
+            <p class="section-tag">Club Photos</p>
+            <h1>Gallery</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+          </div>
+
+          <div id="galleryGrid" class="gallery-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image slideshow">
+      <button id="lightboxClose" class="lightbox-close" aria-label="Close slideshow">✕</button>
+
+      <div class="lightbox-inner">
+        <button id="prevButton" class="lightbox-button" aria-label="Previous image">‹</button>
+
+        <div>
+          <div class="lightbox-stage">
+            <img id="lightboxImage" src="" alt="" />
+          </div>
+          <div id="lightboxMeta" class="lightbox-meta"></div>
+        </div>
+
+        <button id="nextButton" class="lightbox-button" aria-label="Next image">›</button>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <h3>Allen & Sons TTC</h3>
+          <p class="footer-address">
+            21915 Sherman Way<br />
+            Canoga Park, CA 91303
+          </p>
+          <p class="footer-phone">(818) 330-5756</p>
+        </div>
+
+        <div class="footer-hours">
+          <h4>Hours</h4>
+          <p>Weekdays: 10 AM – 9:30 PM</p>
+          <p>Weekends: 10 AM – 4 PM</p>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/coaches.html">Coaches</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/lessons.html">Lessons</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/src/javascript/gallery.js"></script>
+  </body>
+</html>

@@ -6,7 +6,7 @@
 :root {
   --bg: #f7f8fb;
   --surface: #ffffff;
-  --surface-alt: #eef2f8;
+  --surface-alt: #e2e8f0;
   --text: #16202a;
   --muted: #5f6b76;
   --line: #d9e1ea;
@@ -287,6 +287,11 @@ p {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* 9.3 Four Column Layout */
+.card-grid-four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 /* 9.3 Individual card styling */
 .card {
   background: var(--surface);
@@ -399,6 +404,52 @@ p {
 .coach-item .split-section {
   grid-template-columns: 220px 1fr;
   align-items: start;
+}
+
+
+/* 14. Lessons Page */
+  
+/* 14.1 Full flyer image */
+.split-section img.full-width-image {
+  width: 100%;
+  max-width: 300px;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 15. Contact Page */
+
+/* 15.1 Form layout */
+.contact-form {
+  max-width: 640px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* 15.2 Inputs */
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  font: inherit;
+}
+
+/* 15.3 Button spacing */
+.contact-form button {
+  margin-top: 1rem;
 }
 
 /* 12.2 Mobile / small screens */
