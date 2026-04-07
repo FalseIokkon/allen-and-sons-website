@@ -166,7 +166,7 @@ p {
 /* 6. Home Page Hero
    6.1 Hero background image */
 .hero {
-  background: url("/images/hero/club-hero.jpg") center center / cover no-repeat;
+  background: url("/public/images/hero/club-hero.jpg") center center / cover no-repeat;
 }
 
 /* 6.2 Dark overlay for readability */
@@ -220,7 +220,7 @@ p {
 /* 7. About Page Hero
    7.1 About hero background image */
 .about-hero {
-  background: url("/images/hero/storefront.jpg") center / cover no-repeat;
+  background: url("/public/images/hero/storefront.jpg") center / cover no-repeat;
 }
 
 /* 7.2 About hero overlay */
@@ -287,12 +287,12 @@ p {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* 9.3 Four Column Layout */
+/* 9.3 Four-column card layout */
 .card-grid-four {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* 9.3 Individual card styling */
+/* 9.4 Individual card styling */
 .card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -301,7 +301,7 @@ p {
   box-shadow: var(--shadow);
 }
 
-/* 9.4 Card content spacing */
+/* 9.5 Card content spacing */
 .card h3 {
   margin-bottom: 0.75rem;
 }
@@ -356,14 +356,82 @@ p {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* 12. Responsive Rules
-   12.1 Tablet / medium screens */
+/* 12. Coaches Page
+   12.1 Coaches list layout */
+.coaches-list {
+  display: grid;
+  gap: 3rem;
+}
+
+/* 12.2 Individual coach items */
+.coach-item h2 {
+  margin-bottom: 1.25rem;
+}
+
+/* 12.3 Coach image sizing */
+.coach-item img {
+  max-width: 220px;
+  object-fit: cover;
+}
+
+/* 12.4 Adjust split layout for coach rows */
+.coach-item .split-section {
+  grid-template-columns: 220px 1fr;
+  align-items: start;
+}
+
+/* 13. Lessons Page
+   13.1 Full flyer image */
+.split-section img.full-width-image {
+  width: 100%;
+  max-width: 300px;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 14. Contact Page
+   14.1 Form layout */
+.contact-form {
+  max-width: 640px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* 14.2 Inputs */
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  font: inherit;
+}
+
+/* 14.3 Button spacing */
+.contact-form button {
+  margin-top: 1rem;
+}
+
+/* 15. Responsive Rules
+   15.1 Tablet / medium screens */
 @media (max-width: 960px) {
   .split-section {
     grid-template-columns: 1fr;
   }
 
-  .card-grid-three {
+  .card-grid-three,
+  .card-grid-four {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -380,79 +448,13 @@ p {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* 13. Coaches Page
-   13.1 Coaches list layout */
-.coaches-list {
-  display: grid;
-  gap: 3rem;
-}
-
-/* 13.2 Individual coach items */
-.coach-item h2 {
-  margin-bottom: 1.25rem;
-}
-
-/* 13.3 Coach image sizing */
-.coach-item img {
-  max-width: 220px;
-  object-fit: cover;
-}
-
-/* 13.4 Adjust split layout for coach rows */
-.coach-item .split-section {
-  grid-template-columns: 220px 1fr;
-  align-items: start;
-}
-
-
-/* 14. Lessons Page */
-  
-/* 14.1 Full flyer image */
-.split-section img.full-width-image {
-  width: 100%;
-  max-width: 300px;
-  max-height: none;
-  height: auto;
-  object-fit: contain;
-}
-
-/* 15. Contact Page */
-
-/* 15.1 Form layout */
-.contact-form {
-  max-width: 640px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-/* 15.2 Inputs */
-.contact-form label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.7rem 0.8rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
-  font: inherit;
-}
-
-/* 15.3 Button spacing */
-.contact-form button {
-  margin-top: 1rem;
-}
-
-/* 12.2 Mobile / small screens */
+/* 15.2 Mobile / small screens */
 @media (max-width: 720px) {
   .hero-content {
     min-height: 420px;
@@ -464,7 +466,8 @@ p {
     padding: 4rem 0;
   }
 
-  .card-grid-three {
+  .card-grid-three,
+  .card-grid-four {
     grid-template-columns: 1fr;
   }
 
