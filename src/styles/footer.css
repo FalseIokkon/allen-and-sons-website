@@ -1,0 +1,41 @@
+/* 1. Footer (Site Bottom Section)
+   1.1 Overall footer styling */
+.site-footer {
+  background: #101923;
+  color: #d7e0ea;
+  padding: 3rem 0;
+}
+
+/* 2. Footer Layout
+   2.1 Grid layout for footer columns */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 2rem;
+}
+
+/* 3. Footer Typography
+   3.1 Headings inside footer */
+.site-footer h3,
+.site-footer h4 {
+  color: #ffffff;
+}
+
+/* 3.2 Spacing for footer text elements */
+.footer-address,
+.footer-phone,
+.footer-hours p,
+.footer-nav li {
+  margin-bottom: 0.5rem;
+}
+
+/* 4. Footer Navigation
+   4.1 Default link color */
+.footer-nav a {
+  color: #d7e0ea;
+}
+
+/* 4.2 Hover state for links */
+.footer-nav a:hover {
+  color: #ffffff;
+}

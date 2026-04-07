@@ -1,0 +1,57 @@
+/* 1. Header (Top Navigation Bar)
+   1.1 Sticky positioning and visual styling */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5eaf0;
+}
+
+/* 1.2 Header layout container
+   Aligns logo and navigation horizontally */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  gap: 1rem;
+}
+
+/* 2. Branding
+   2.1 Logo text styling */
+.logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* 3. Navigation
+   3.1 Navigation list layout */
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* 3.2 Default navigation link styles */
+.nav-list a {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* 3.3 Hover + active state for navigation links */
+.nav-list a:hover,
+.nav-list a.active {
+  color: var(--text);
+}
+
+/* 4. Navigation Button (CTA in header)
+   4.1 Styled "Contact" button */
+.nav-button {
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #ffffff !important;
+}

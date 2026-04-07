@@ -1,0 +1,423 @@
+@import "./header.css";
+@import "./footer.css";
+
+/* 1. Design Tokens
+   1.1 Global color, spacing, shadow, radius, and layout variables */
+:root {
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --surface-alt: #eef2f8;
+  --text: #16202a;
+  --muted: #5f6b76;
+  --line: #d9e1ea;
+  --primary: #0f3d91;
+  --primary-dark: #0a2d6b;
+  --accent: #d62839;
+  --shadow: 0 18px 45px rgba(19, 35, 58, 0.08);
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --container: 1120px;
+}
+
+/* 2. Base / Reset
+   2.1 Box model reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2.2 Document defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* 2.3 Element defaults */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0 0 1rem;
+}
+
+/* 3. Shared Layout
+   3.1 Main centered content wrapper */
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+/* 3.2 Standard page sections */
+.section {
+  padding: 5rem 0;
+  background: var(--bg);
+}
+
+/* 3.3 Alternate section background */
+.section-alt {
+  background: var(--surface-alt);
+}
+
+/* 3.4 Two-column split layout */
+.split-section {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* 4. Shared Typography / Content Helpers
+   4.1 Small accent label above section headings */
+.section-tag {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* 4.2 Wrapper for section heading groups */
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+/* 4.3 CTA heading sizing */
+.cta-box h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+/* 4.4 Subtle inline text links */
+.text-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 0.2s ease;
+}
+
+.text-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* 5. Buttons
+   5.1 Shared button base styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.8rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+/* 5.2 Primary button */
+.button-primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background: #b61f2f;
+}
+
+/* 5.3 Secondary button */
+.button-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.button-secondary:hover {
+  border-color: var(--primary);
+}
+
+/* 6. Home Page Hero
+   6.1 Hero background image */
+.hero {
+  background: url("/images/hero/club-hero.jpg") center center / cover no-repeat;
+}
+
+/* 6.2 Dark overlay for readability */
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 35, 0.68) 0%,
+    rgba(10, 20, 35, 0.56) 100%
+  );
+}
+
+/* 6.3 Hero content alignment and spacing */
+.hero-content {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+/* 6.4 Hero text wrapper */
+.hero-main {
+  max-width: 680px;
+  color: #ffffff;
+}
+
+/* 6.5 Main hero heading */
+.hero-main h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.96;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+/* 6.6 Supporting hero text */
+.hero-text {
+  max-width: 560px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1.5rem;
+}
+
+/* 6.7 Hero action buttons row */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* 7. About Page Hero
+   7.1 About hero background image */
+.about-hero {
+  background: url("/images/hero/storefront.jpg") center / cover no-repeat;
+}
+
+/* 7.2 About hero overlay */
+.about-hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 35, 0.75) 0%,
+    rgba(10, 20, 35, 0.6) 100%
+  );
+  padding: 5rem 0;
+}
+
+/* 7.3 About hero heading */
+.about-hero h1 {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+/* 7.4 Lighter accent tag for dark hero */
+.about-hero .section-tag {
+  color: #ffb3bb;
+}
+
+/* 8. Split Section Content
+   8.1 Additional spacing for subheadings inside split layouts */
+.split-section h3 {
+  margin-top: 1.5rem;
+}
+
+/* 8.2 Bullet list styling inside split layouts */
+.split-section ul {
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.split-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* 8.3 Muted paragraph and list text inside split layouts
+   Excludes section-tag so accent labels stay red */
+.split-section p:not(.section-tag),
+.split-section li {
+  color: var(--muted);
+}
+
+/* 8.4 Keep split-layout images from getting too tall */
+.split-section img {
+  max-height: 420px;
+  object-fit: cover;
+}
+
+/* 9. Card System
+   9.1 Shared card grid container */
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* 9.2 Three-column card layout */
+.card-grid-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 9.3 Individual card styling */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+/* 9.4 Card content spacing */
+.card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+/* 10. Gallery Preview
+   10.1 Homepage gallery grid */
+.gallery-preview {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 1rem;
+}
+
+/* 10.2 Gallery preview image treatment */
+.gallery-preview img {
+  height: 320px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+/* 10.3 Spacing above gallery CTA/link */
+.section-action {
+  margin-top: 2rem;
+}
+
+/* 11. CTA Component
+   11.1 Main CTA box layout and gradient background */
+.cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff;
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* 11.2 CTA accent label on dark background */
+.cta-box .section-tag {
+  color: #ffd1d6;
+}
+
+/* 11.3 CTA supporting paragraph */
+.cta-box p:last-child {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 12. Responsive Rules
+   12.1 Tablet / medium screens */
+@media (max-width: 960px) {
+  .split-section {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-preview img {
+    height: auto;
+    min-height: unset;
+  }
+
+  .cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* 13. Coaches Page
+   13.1 Coaches list layout */
+.coaches-list {
+  display: grid;
+  gap: 3rem;
+}
+
+/* 13.2 Individual coach items */
+.coach-item h2 {
+  margin-bottom: 1.25rem;
+}
+
+/* 13.3 Coach image sizing */
+.coach-item img {
+  max-width: 220px;
+  object-fit: cover;
+}
+
+/* 13.4 Adjust split layout for coach rows */
+.coach-item .split-section {
+  grid-template-columns: 220px 1fr;
+  align-items: start;
+}
+
+/* 12.2 Mobile / small screens */
+@media (max-width: 720px) {
+  .hero-content {
+    min-height: 420px;
+    padding: 4rem 0;
+  }
+
+  .section,
+  .about-hero-overlay {
+    padding: 4rem 0;
+  }
+
+  .card-grid-three {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-main h1 {
+    line-height: 1;
+  }
+}
