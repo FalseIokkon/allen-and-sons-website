@@ -17,12 +17,21 @@
       <div class="container header-inner">
         <a href="/" class="logo">Allen & Sons TTC</a>
 
-        <!-- Hamburger -->
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
           ☰
         </button>
 
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav
+          class="site-nav"
+          id="site-nav"
+          aria-label="Main navigation"
+        >
           <ul class="nav-list">
             <li><a href="/">Home</a></li>
             <li><a href="/about.html">About</a></li>
@@ -47,30 +56,10 @@
 
       <section class="section">
         <div class="container">
-          <div class="section-heading">
-          </div>
-
           <div id="galleryGrid" class="gallery-grid"></div>
         </div>
       </section>
     </main>
-
-    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image slideshow">
-      <button id="lightboxClose" class="lightbox-close" aria-label="Close slideshow">✕</button>
-
-      <div class="lightbox-inner">
-        <button id="prevButton" class="lightbox-button" aria-label="Previous image">‹</button>
-
-        <div>
-          <div class="lightbox-stage">
-            <img id="lightboxImage" src="" alt="" />
-          </div>
-          <div id="lightboxMeta" class="lightbox-meta"></div>
-        </div>
-
-        <button id="nextButton" class="lightbox-button" aria-label="Next image">›</button>
-      </div>
-    </div>
 
     <footer class="site-footer">
       <div class="container footer-grid">
@@ -104,6 +93,5 @@
 
     <script type="module" src="/src/javascript/gallery.js"></script>
     <script type="module" src="/src/javascript/main.js"></script>
-
   </body>
 </html>

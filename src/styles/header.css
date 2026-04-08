@@ -1,4 +1,4 @@
-/* 1. Header (Top Navigation Bar) */
+/* Header */
 .site-header {
   position: sticky;
   top: 0;
@@ -12,8 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72px;
   gap: 1rem;
+  min-height: 72px;
 }
 
 .logo {
@@ -23,21 +23,21 @@
   color: var(--primary);
 }
 
-/* 2. Hamburger button */
+/* Menu toggle */
 .menu-toggle {
   display: none;
-  background: none;
+  position: relative;
+  z-index: 1003;
   border: 0;
+  background: transparent;
+  color: var(--text);
   font: inherit;
   font-size: 1.9rem;
   line-height: 1;
   cursor: pointer;
-  color: var(--text);
-  position: relative;
-  z-index: 1002;
 }
 
-/* 3. Desktop nav */
+/* Navigation */
 .site-nav {
   display: block;
 }
@@ -66,10 +66,15 @@
   padding: 0.7rem 1rem;
   border-radius: 999px;
   background: var(--primary);
-  color: #ffffff !important;
+  color: #fff !important;
 }
 
-/* 4. Mobile overlay nav */
+/* Backdrop placeholder */
+.nav-backdrop {
+  display: none;
+}
+
+/* Mobile navigation */
 @media (max-width: 720px) {
   .menu-toggle {
     display: block;
@@ -79,36 +84,24 @@
     position: fixed;
     top: 0;
     right: 0;
+    left: auto;
     width: min(82vw, 320px);
-    height: 100vh;
+    height: 100dvh;
     padding: 6rem 1.25rem 1.5rem;
-    background: rgba(255, 255, 255, .85);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(16px);
-    box-shadow: -18px 0 40px rgba(0, 0, 0, 0.14);
+    box-shadow: -18px 0 40px rgba(0, 0, 0, 0.18);
+
     transform: translateX(100%);
     transition: transform 0.28s ease;
-    z-index: 1001;
-    overflow-y: auto;
+    z-index: 1002;
   }
 
   .site-nav.open {
     transform: translateX(0);
-  }
-
-  .site-nav::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 20, 35, 0.4);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.28s ease;
-    z-index: -1;
-  }
-
-  .site-nav.open::before {
-    opacity: 1;
-    pointer-events: auto;
   }
 
   .nav-list {
@@ -125,16 +118,16 @@
     display: block;
     width: 100%;
     padding: 0.95rem 1rem;
-    border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.7);
     border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.68);
     color: var(--text);
   }
 
   .nav-list a.nav-button {
-    background: var(--primary);
-    color: #ffffff !important;
     border-color: var(--primary);
+    background: var(--primary);
+    color: #fff !important;
     text-align: center;
   }
 }

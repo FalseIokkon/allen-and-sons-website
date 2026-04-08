@@ -31,6 +31,7 @@
 /* 2.2 Document defaults */
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -39,25 +40,16 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
-}
-
-html,
-body {
   overflow-x: clip;
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* Only lock page scroll on mobile when menu is open */
+/* Mobile menu scroll lock */
 @media (max-width: 720px) {
-  html.menu-open,
   body.menu-open {
-    overflow: hidden;
-    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
     touch-action: none;
   }
 
@@ -449,7 +441,6 @@ p {
   margin-top: 1rem;
 }
 
-
 /* 15. Responsive Rules (Single Breakpoint)
    Applies to tablets + mobile for now */
 @media (max-width: 720px) {
@@ -493,7 +484,7 @@ p {
   .hero-main h1 {
     line-height: 1;
   }
-  
+
   .coach-item .split-section {
     grid-template-columns: 1fr;
     gap: 1rem;
