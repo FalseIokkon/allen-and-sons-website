@@ -166,7 +166,7 @@ p {
 /* 6. Home Page Hero
    6.1 Hero background image */
 .hero {
-  background: url("/public/images/hero/club-hero.jpg") center center / cover no-repeat;
+  background: url("/images/hero/club-hero.jpg") center center / cover no-repeat;
 }
 
 /* 6.2 Dark overlay for readability */
@@ -220,7 +220,7 @@ p {
 /* 7. About Page Hero
    7.1 About hero background image */
 .about-hero {
-  background: url("/public/images/hero/storefront.jpg") center / cover no-repeat;
+  background: url("/images/hero/storefront.jpg") center / cover no-repeat;
 }
 
 /* 7.2 About hero overlay */

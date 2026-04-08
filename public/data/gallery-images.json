@@ -1,18 +1,18 @@
 [
   {
-    "src": "/public/images/gallery/gallery-1.jpg",
+    "src": "/images/gallery/gallery-1.jpg",
     "alt": "Cho, Song, Kyaw, and James"
   },
   {
-    "src": "/public/images/gallery/gallery-2.jpg",
+    "src": "/images/gallery/gallery-2.jpg",
     "alt": "2023 Summer Camp (Week 6)"
   },
   {
-    "src": "/public/images/gallery/gallery-3.jpg",
+    "src": "/images/gallery/gallery-3.jpg",
     "alt": "Birthday Party November 2024"
   },
   {
-    "src": "/public/images/gallery/club-play.jpg",
+    "src": "/images/gallery/club-play.jpg",
     "alt": "Weekly Round Robin"
   }
 ]

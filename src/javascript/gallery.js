@@ -11,7 +11,7 @@ const nextButton = document.getElementById("nextButton");
 
 async function loadGalleryImages() {
   try {
-    const response = await fetch("/public/data/gallery-images.json");
+    const response = await fetch("/data/gallery-images.json");
 
     if (!response.ok) {
       throw new Error("Could not load gallery-images.json");
