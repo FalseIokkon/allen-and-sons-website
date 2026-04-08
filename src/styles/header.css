@@ -1,15 +1,13 @@
-/* 1. Header (Top Navigation Bar)
-   1.1 Sticky positioning and visual styling */
+/* 1. Header (Top Navigation Bar) */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #e5eaf0;
 }
 
-/* 1.2 Header layout container */
 .header-inner {
   display: flex;
   align-items: center;
@@ -18,8 +16,6 @@
   gap: 1rem;
 }
 
-/* 2. Branding
-   2.1 Logo text styling */
 .logo {
   font-size: 1.1rem;
   font-weight: 800;
@@ -27,21 +23,21 @@
   color: var(--primary);
 }
 
-/* 3. Menu Toggle
-   3.1 Hidden on desktop */
+/* 2. Hamburger button */
 .menu-toggle {
   display: none;
   background: none;
   border: 0;
   font: inherit;
-  font-size: 1.75rem;
+  font-size: 1.9rem;
   line-height: 1;
   cursor: pointer;
   color: var(--text);
+  position: relative;
+  z-index: 1002;
 }
 
-/* 4. Navigation
-   4.1 Desktop nav layout */
+/* 3. Desktop nav */
 .site-nav {
   display: block;
 }
@@ -62,8 +58,6 @@
   color: var(--text);
 }
 
-/* 5. Navigation Button
-   5.1 Styled "Contact" button */
 .nav-button {
   display: inline-flex;
   align-items: center;
@@ -75,33 +69,52 @@
   color: #ffffff !important;
 }
 
-/* 6. Mobile Header */
+/* 4. Mobile overlay nav */
 @media (max-width: 720px) {
-  .header-inner {
-    flex-wrap: wrap;
-    min-height: 64px;
-    padding: 0.75rem 0;
-  }
-
   .menu-toggle {
     display: block;
   }
 
   .site-nav {
-    display: none;
-    width: 100%;
-    padding-top: 0.5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(82vw, 320px);
+    height: 100vh;
+    padding: 6rem 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: blur(16px);
+    box-shadow: -18px 0 40px rgba(0, 0, 0, 0.14);
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    z-index: 1001;
+    overflow-y: auto;
   }
 
   .site-nav.open {
-    display: block;
+    transform: translateX(0);
+  }
+
+  .site-nav::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 20, 35, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+    z-index: -1;
+  }
+
+  .site-nav.open::before {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-list {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.5rem;
-    padding-top: 0.75rem;
+    gap: 0.75rem;
   }
 
   .nav-list li {
@@ -111,9 +124,9 @@
   .nav-list a {
     display: block;
     width: 100%;
-    padding: 0.85rem 1rem;
+    padding: 0.95rem 1rem;
     border-radius: var(--radius-sm);
-    background: var(--surface);
+    background: rgba(255, 255, 255, 0.7);
     border: 1px solid var(--line);
     color: var(--text);
   }

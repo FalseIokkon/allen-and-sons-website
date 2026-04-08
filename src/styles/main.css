@@ -41,6 +41,32 @@ body {
   line-height: 1.6;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Only lock page scroll on mobile when menu is open */
+@media (max-width: 720px) {
+  html.menu-open,
+  body.menu-open {
+    overflow: hidden;
+    height: 100%;
+    touch-action: none;
+  }
+
+  .site-nav {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 /* 2.3 Element defaults */
 img {
   display: block;
@@ -466,5 +492,14 @@ p {
 
   .hero-main h1 {
     line-height: 1;
+  }
+  
+  .coach-item .split-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .coach-item img {
+    max-width: 100%;
   }
 }
