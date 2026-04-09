@@ -2,19 +2,19 @@ const galleryGrid = document.getElementById("galleryGrid");
 
 const images = [
   {
-    src: "/images/gallery/gallery-1.jpg",
+    src: new URL("../../images/gallery/gallery-1.jpg", import.meta.url).href,
     alt: "Cho, Song, Kyaw, and James"
   },
   {
-    src: "/images/gallery/gallery-2.jpg",
+    src: new URL("../../images/gallery/gallery-2.jpg", import.meta.url).href,
     alt: "2023 Summer Camp (Week 6)"
   },
   {
-    src: "/images/gallery/gallery-3.jpg",
+    src: new URL("../../images/gallery/gallery-3.jpg", import.meta.url).href,
     alt: "Birthday Party November 2024"
   },
   {
-    src: "/images/gallery/club-play.jpg",
+    src: new URL("../../images/gallery/club-play.jpg", import.meta.url).href,
     alt: "Weekly Round Robin"
   }
 ];
