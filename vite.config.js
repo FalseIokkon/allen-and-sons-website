@@ -2,10 +2,11 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  base: mode === "github" ? "/allen-and-sons-website/" : "/",
+
   build: {
     rollupOptions: {
       input: {
@@ -18,4 +19,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));
