@@ -1,8 +1,7 @@
 @import "./header.css";
 @import "./footer.css";
 
-/* 1. Design Tokens
-   1.1 Global color, spacing, shadow, radius, and layout variables */
+/* 1. Design Tokens */
 :root {
   --bg: #f7f8fb;
   --surface: #ffffff;
@@ -20,15 +19,13 @@
   --container: 1120px;
 }
 
-/* 2. Base / Reset
-   2.1 Box model reset */
+/* 2. Base / Reset */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* 2.2 Document defaults */
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
@@ -59,7 +56,7 @@ body {
   }
 }
 
-/* 2.3 Element defaults */
+/* Elements */
 img {
   display: block;
   width: 100%;
@@ -86,25 +83,21 @@ p {
   margin: 0 0 1rem;
 }
 
-/* 3. Shared Layout
-   3.1 Main centered content wrapper */
+/* 3. Layout */
 .container {
   width: min(100% - 2rem, var(--container));
   margin-inline: auto;
 }
 
-/* 3.2 Standard page sections */
 .section {
   padding: 5rem 0;
   background: var(--bg);
 }
 
-/* 3.3 Alternate section background */
 .section-alt {
   background: var(--surface-alt);
 }
 
-/* 3.4 Two-column split layout */
 .split-section {
   display: grid;
   grid-template-columns: 1.2fr 0.9fr;
@@ -112,8 +105,7 @@ p {
   align-items: start;
 }
 
-/* 4. Shared Typography / Content Helpers
-   4.1 Small accent label above section headings */
+/* 4. Typography */
 .section-tag {
   font-size: 1rem;
   font-weight: 700;
@@ -122,33 +114,29 @@ p {
   color: var(--accent);
 }
 
-/* 4.2 Wrapper for section heading groups */
 .section-heading {
   max-width: 680px;
   margin-bottom: 2rem;
 }
 
-/* 4.3 CTA heading sizing */
 .cta-box h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
   margin-bottom: 1rem;
 }
 
-/* 4.4 Subtle inline text links */
 .text-link {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  transition: border-color 0.2s ease;
+  color: var(--primary);
+  border-bottom: 1px solid rgba(15, 61, 145, 0.4);
+  transition: 0.2s ease;
 }
 
 .text-link:hover {
+  color: var(--accent);
   border-bottom-color: var(--accent);
 }
 
-/* 5. Buttons
-   5.1 Shared button base styles */
+/* 5. Buttons */
 .button {
   display: inline-flex;
   align-items: center;
@@ -160,17 +148,15 @@ p {
   transition: 0.2s ease;
 }
 
-/* 5.2 Primary button */
 .button-primary {
   background: var(--accent);
-  color: #ffffff;
+  color: #fff;
 }
 
 .button-primary:hover {
   background: #b61f2f;
 }
 
-/* 5.3 Secondary button */
 .button-secondary {
   background: var(--surface);
   color: var(--text);
@@ -181,20 +167,29 @@ p {
   border-color: var(--primary);
 }
 
-/* Shared action row */
+.button-tertiary {
+  background: transparent;
+  color: var(--primary);
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid transparent;
+}
+
+.button-tertiary:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-/* 8. Split Section Content
-   8.1 Additional spacing for subheadings inside split layouts */
+/* 8. Split Content */
 .split-section h3 {
   margin-top: 1.5rem;
 }
 
-/* 8.2 Bullet list styling inside split layouts */
 .split-section ul {
   margin: 1rem 0;
   padding-left: 1.25rem;
@@ -205,37 +200,30 @@ p {
   margin-bottom: 0.5rem;
 }
 
-/* 8.3 Muted paragraph and list text inside split layouts
-   Excludes section-tag so accent labels stay red */
 .split-section p:not(.section-tag),
 .split-section li {
   color: var(--muted);
 }
 
-/* 8.4 Keep split-layout images from getting too tall */
 .split-section img {
   max-height: 420px;
   object-fit: cover;
 }
 
-/* 9. Card System
-   9.1 Shared card grid container */
+/* 9. Cards */
 .card-grid {
   display: grid;
   gap: 1rem;
 }
 
-/* 9.2 Three-column card layout */
 .card-grid-three {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* 9.3 Four-column card layout */
 .card-grid-four {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* 9.4 Individual card styling */
 .card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -244,7 +232,6 @@ p {
   box-shadow: var(--shadow);
 }
 
-/* 9.5 Card content spacing */
 .card h3 {
   margin-bottom: 0.75rem;
 }
@@ -254,38 +241,56 @@ p {
   color: var(--muted);
 }
 
-/* 10.3 Spacing above gallery CTA/link */
+/* CTA */
 .section-action {
   margin-top: 2rem;
 }
 
-/* 11. CTA Component
-   11.1 Main CTA box layout and gradient background */
 .cta-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #ffffff;
+  color: #fff;
   border-radius: 28px;
   padding: 2rem;
   box-shadow: var(--shadow);
 }
 
-/* 11.2 CTA accent label on dark background */
 .cta-box .section-tag {
   color: #ffd1d6;
 }
 
-/* 11.3 CTA supporting paragraph */
 .cta-box p:last-child {
-  margin-bottom: 0;
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* 15. Responsive Rules (Single Breakpoint)
-   Applies to tablets + mobile for now */
+/* Page Hero (FIXED + COMPACT) */
+.page-hero-alt {
+  background: url("/images/hero/storefront.avif") center / cover no-repeat;
+}
+
+.page-hero-alt-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 35, 0.75) 0%,
+    rgba(10, 20, 35, 0.6) 100%
+  );
+  padding: 3.5rem 0; /* reduced from 5rem */
+}
+
+.page-hero-alt h1 {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.page-hero-alt .section-tag {
+  color: #ffb3bb;
+}
+
+/* 15. Responsive */
 @media (max-width: 720px) {
   .split-section {
     grid-template-columns: 1fr;
@@ -301,36 +306,23 @@ p {
     align-items: flex-start;
   }
 
+  /* tighter global spacing */
   .section {
-    padding: 4rem 0;
+    padding: 3rem 0;
   }
-}
 
-@media (max-width: 720px) {
+  /* FIX: compact page hero */
   .page-hero-alt-overlay {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
   }
-}
 
-.page-hero-alt {
-  background: url("/images/hero/storefront.avif") center / cover no-repeat;
-}
+  .page-hero-alt h1 {
+    font-size: 2.2rem;
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+  }
 
-.page-hero-alt-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(10, 20, 35, 0.75) 0%,
-    rgba(10, 20, 35, 0.6) 100%
-  );
-  padding: 5rem 0;
-}
-
-.page-hero-alt h1 {
-  color: #ffffff;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  margin-bottom: 1rem;
-}
-
-.page-hero-alt .section-tag {
-  color: #ffb3bb;
+  .page-hero-alt .section-tag {
+    margin-bottom: 0.5rem;
+  }
 }

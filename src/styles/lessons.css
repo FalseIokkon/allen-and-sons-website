@@ -40,14 +40,6 @@
   align-items: center;
 }
 
-.full-width-image {
-  width: 100%;
-  max-width: 300px;
-  max-height: none;
-  height: auto;
-  object-fit: contain;
-}
-
 /* Mobile tweaks */
 @media (max-width: 720px) {
   .full-width-image {
