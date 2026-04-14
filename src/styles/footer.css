@@ -24,6 +24,7 @@
 /* 3.2 Spacing for footer text elements */
 .footer-address,
 .footer-phone,
+.footer-email,
 .footer-hours p,
 .footer-nav li {
   margin-bottom: 0.5rem;
