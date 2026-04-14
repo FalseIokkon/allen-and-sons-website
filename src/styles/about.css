@@ -21,8 +21,24 @@
   color: #ffb3bb;
 }
 
+.about-note {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.about-image {
+  width: auto;
+  max-width: 80%;
+  height: auto;
+}
+
 @media (max-width: 720px) {
   .about-hero-overlay {
     padding: 4rem 0;
+  }
+
+  .about-image {
+    display: none;
   }
 }

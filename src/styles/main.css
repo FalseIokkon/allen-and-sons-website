@@ -290,6 +290,15 @@ p {
   color: #ffb3bb;
 }
 
+.card-list {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.card-list li {
+  margin-bottom: 0.5rem;
+}
+
 /* 15. Responsive */
 @media (max-width: 720px) {
   .split-section {
@@ -326,3 +335,4 @@ p {
     margin-bottom: 0.5rem;
   }
 }
+
