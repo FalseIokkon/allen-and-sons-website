@@ -1,0 +1,28 @@
+.about-hero {
+  background: url("/images/hero/storefront.avif") center / cover no-repeat;
+}
+
+.about-hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 35, 0.75) 0%,
+    rgba(10, 20, 35, 0.6) 100%
+  );
+  padding: 5rem 0;
+}
+
+.about-hero h1 {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.about-hero .section-tag {
+  color: #ffb3bb;
+}
+
+@media (max-width: 720px) {
+  .about-hero-overlay {
+    padding: 4rem 0;
+  }
+}

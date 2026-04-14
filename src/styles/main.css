@@ -181,86 +181,11 @@ p {
   border-color: var(--primary);
 }
 
-/* 6. Home Page Hero
-   6.1 Hero background image */
-.hero {
-  background: url("/images/hero/club-hero.avif") center center / cover no-repeat;
-}
-
-/* 6.2 Dark overlay for readability */
-.hero-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(10, 20, 35, 0.68) 0%,
-    rgba(10, 20, 35, 0.56) 100%
-  );
-}
-
-/* 6.3 Hero content alignment and spacing */
-.hero-content {
-  min-height: 520px;
-  display: flex;
-  align-items: center;
-  padding: 5rem 0;
-}
-
-/* 6.4 Hero text wrapper */
-.hero-main {
-  max-width: 680px;
-  color: #ffffff;
-}
-
-/* 6.5 Main hero heading */
-.hero-main h1 {
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 0.96;
-  margin-bottom: 1rem;
-  letter-spacing: -0.03em;
-}
-
-/* 6.6 Supporting hero text */
-.hero-text {
-  max-width: 560px;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.88);
-  margin-bottom: 1.5rem;
-}
-
-/* 6.7 Hero action buttons row */
+/* Shared action row */
 .hero-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-/* 7. About Page Hero
-   7.1 About hero background image */
-.about-hero {
-  background: url("/images/hero/storefront.avif") center / cover no-repeat;
-}
-
-/* 7.2 About hero overlay */
-.about-hero-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(10, 20, 35, 0.75) 0%,
-    rgba(10, 20, 35, 0.6) 100%
-  );
-  padding: 5rem 0;
-}
-
-/* 7.3 About hero heading */
-.about-hero h1 {
-  color: #ffffff;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  margin-bottom: 1rem;
-}
-
-/* 7.4 Lighter accent tag for dark hero */
-.about-hero .section-tag {
-  color: #ffb3bb;
 }
 
 /* 8. Split Section Content
@@ -329,21 +254,6 @@ p {
   color: var(--muted);
 }
 
-/* 10. Gallery Preview
-   10.1 Homepage gallery grid */
-.gallery-preview {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 1rem;
-}
-
-/* 10.2 Gallery preview image treatment */
-.gallery-preview img {
-  height: 320px;
-  object-fit: cover;
-  box-shadow: var(--shadow);
-}
-
 /* 10.3 Spacing above gallery CTA/link */
 .section-action {
   margin-top: 2rem;
@@ -374,77 +284,9 @@ p {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* 12. Coaches Page
-   12.1 Coaches list layout */
-.coaches-list {
-  display: grid;
-  gap: 3rem;
-}
-
-/* 12.2 Individual coach items */
-.coach-item h2 {
-  margin-bottom: 1.25rem;
-}
-
-/* 12.3 Coach image sizing */
-.coach-item img {
-  max-width: 220px;
-  object-fit: cover;
-}
-
-/* 12.4 Adjust split layout for coach rows */
-.coach-item .split-section {
-  grid-template-columns: 220px 1fr;
-  align-items: start;
-}
-
-/* 13. Lessons Page
-   13.1 Full flyer image */
-.split-section img.full-width-image {
-  width: 100%;
-  max-width: 300px;
-  max-height: none;
-  height: auto;
-  object-fit: contain;
-}
-
-/* 14. Contact Page
-   14.1 Form layout */
-.contact-form {
-  max-width: 640px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-/* 14.2 Inputs */
-.contact-form label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.7rem 0.8rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
-  font: inherit;
-}
-
-/* 14.3 Button spacing */
-.contact-form button {
-  margin-top: 1rem;
-}
-
 /* 15. Responsive Rules (Single Breakpoint)
    Applies to tablets + mobile for now */
 @media (max-width: 720px) {
-  /* --- Layout adjustments --- */
   .split-section {
     grid-template-columns: 1fr;
   }
@@ -454,43 +296,41 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .gallery-preview {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-preview img {
-    height: auto;
-  }
-
   .cta-box {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-content {
-    min-height: 420px;
+  .section {
     padding: 4rem 0;
   }
+}
 
-  .section,
-  .about-hero-overlay {
+@media (max-width: 720px) {
+  .page-hero-alt-overlay {
     padding: 4rem 0;
   }
+}
 
-  .hero-main h1 {
-    line-height: 1;
-  }
+.page-hero-alt {
+  background: url("/images/hero/storefront.avif") center / cover no-repeat;
+}
 
-  .coach-item .split-section {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+.page-hero-alt-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 35, 0.75) 0%,
+    rgba(10, 20, 35, 0.6) 100%
+  );
+  padding: 5rem 0;
+}
 
-  .coach-item img {
-    max-width: 100%;
-  }
+.page-hero-alt h1 {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.page-hero-alt .section-tag {
+  color: #ffb3bb;
 }

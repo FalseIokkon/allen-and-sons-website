@@ -1,0 +1,60 @@
+/* Lessons page only */
+
+/* Private lesson cards */
+.card-grid-three .card p {
+  font-size: 1.05rem;
+}
+
+/* Group lesson cards */
+.card-grid-four .card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card-grid-four .card p {
+  margin-bottom: 0.35rem;
+}
+
+.card-grid-four .card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Schedule note under adult group lessons */
+.lesson-note {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 900px;
+}
+
+/* Kids camp flyer image */
+.full-width-image {
+  width: 100%;
+  max-width: 300px;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Kids camp section alignment */
+.lessons-camp {
+  align-items: center;
+}
+
+.full-width-image {
+  width: 100%;
+  max-width: 300px;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile tweaks */
+@media (max-width: 720px) {
+  .full-width-image {
+    max-width: 100%;
+  }
+
+  .lesson-note {
+    margin-top: 1.5rem;
+  }
+}

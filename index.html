@@ -9,6 +9,8 @@
       content="Allen & Sons Table Tennis Club offers coaching, lessons, open play, and youth programs in Canoga Park, California."
     />
     <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="./src/styles/home.css" />
+
   </head>
   <body>
     <header class="site-header">
@@ -39,12 +41,12 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-overlay">
-          <div class="container hero-content">
-            <div class="hero-main">
+      <section class="home-hero">
+        <div class="home-hero-overlay">
+          <div class="container home-hero-content">
+            <div class="home-hero-copy">
               <h1>Allen & Sons<br>Table Tennis Club</h1>
-              <p class="hero-text">Table Tennis For All Levels</p>
+              <p class="home-hero-tagline">Table Tennis For All Levels</p>
               <div class="hero-actions">
                 <a href="./contact.html" class="button button-primary">Visit Us</a>
                 <a href="./lessons.html" class="button button-secondary">Lessons</a>
@@ -74,19 +76,20 @@
             </article>
 
             <article class="card">
-              <h3>Contact</h3>
+              <h3>Round Robin</h3>
               <p>
-                <a href="tel:18183305756" class="text-link">(818) 330-5756</a><br />
-                <a href="mailto:mypingpongclub@gmail.com" class="text-link">
-                  mypingpongclub@gmail.com
+                We host a weekly Friday Night Round Robin!
+                <a href="./data/friday-night-round-robin-flyer.pdf" class="text-link" target="_blank">
+                  View the Flyer
                 </a>
               </p>
             </article>
 
+
             <article class="card">
               <h3>Professional Coaching</h3>
               <p>
-                Learn from experienced coaches with lessons tailored to your level and goals.
+                Get expert coaching with flexible options for both one-on-one and group lessons.
               </p>
             </article>
 
@@ -107,19 +110,19 @@
         </div>
       </section>
 
-      <section class="section section-alt">
+      <section class="section section-alt shop-section">
         <div class="container">
-          <div class="section-heading">
-            <p class="section-tag">Club Shop</p>
-            <h2>Butterfly Equipment, Apparel, and Expert Help</h2>
-            <p>
-              Our club shop offers genuine Butterfly equipment at competitive prices,
-              with guidance from experienced staff to help you find the right setup.
-            </p>
-          </div>
-
           <div class="split-section">
             <div>
+              <div class="section-heading">
+                <p class="section-tag">Club Shop</p>
+                <h2>Butterfly Equipment, Apparel, and Expert Help</h2>
+                <p>
+                  Our club shop offers genuine Butterfly equipment at competitive prices,
+                  with guidance from experienced staff to help you find the right setup.
+                </p>
+              </div>
+
               <p>
                 We carry a range of table tennis gear for players of all levels,
                 including:
@@ -127,9 +130,9 @@
 
               <ul>
                 <li>Pre-made rackets, blades, and rubbers</li>
-                <li>Balls, shoes, and apparel</li>
+                <li>Shoes, shirts, and other apparel</li>
                 <li>Accessories and training essentials</li>
-                <li>Help choosing equipment that fits your playing style</li>
+                <li>Professional help choosing equipment that fits your playing style</li>
               </ul>
 
               <p>
@@ -142,16 +145,24 @@
               </div>
             </div>
 
-            <div>
+            <div class="shop-image-stack">
               <img
                 src="./images/shop/shop-display-1.avif"
                 alt="Table tennis rackets, shoes, and rubbers in the club shop"
               />
+
+              <a href="https://butterflyonline.com/" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="./images/shop/butterfly-shop-logo.avif"
+                  alt="Butterfly Shop 2026 sign"
+                  class="shop-brand-logo"
+                />
+              </a>
             </div>
           </div>
-
         </div>
       </section>
+
 
       <section class="section">
         <div class="container">
@@ -159,7 +170,7 @@
             <p class="section-tag">Gallery</p>
           </div>
 
-          <div class="gallery-preview">
+          <div class="home-gallery-preview">
             <img
               src="./images/gallery/gallery-1.avif"
               alt="Players training at the club"

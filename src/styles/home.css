@@ -1,0 +1,90 @@
+/* Home page hero */
+.home-hero {
+  background: url("/images/hero/club-hero.avif") center center / cover no-repeat;
+}
+
+.home-hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 35, 0.68) 0%,
+    rgba(10, 20, 35, 0.56) 100%
+  );
+}
+
+.home-hero-content {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.home-hero-copy {
+  max-width: 680px;
+  color: #ffffff;
+}
+
+.home-hero-copy h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.96;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.home-hero-tagline {
+  max-width: 560px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1.5rem;
+}
+
+/* Club shop image stack */
+.shop-image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.shop-brand-logo {
+  max-height: none;
+  object-fit: contain;
+}
+
+.shop-image-stack a {
+  align-self: center;
+  width: 70%;
+}
+
+/* Home gallery preview */
+.home-gallery-preview {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.home-gallery-preview img {
+  height: 320px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 720px) {
+  .home-gallery-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .home-gallery-preview img {
+    height: auto;
+  }
+
+  .home-hero-content {
+    min-height: 420px;
+    padding: 4rem 0;
+  }
+
+  .home-hero-copy h1 {
+    line-height: 1;
+  }
+}

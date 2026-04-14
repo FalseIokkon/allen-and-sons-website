@@ -1,0 +1,31 @@
+/* Coaches page */
+
+.coaches-list {
+  display: grid;
+  gap: 3rem;
+}
+
+.coach-item h2 {
+  margin-bottom: 1.25rem;
+}
+
+.coach-item img {
+  max-width: 220px;
+  object-fit: cover;
+}
+
+.coach-item .split-section {
+  grid-template-columns: 220px 1fr;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .coach-item .split-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .coach-item img {
+    max-width: 100%;
+  }
+}
