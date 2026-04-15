@@ -13,7 +13,6 @@
 - changed repetitive email/phone card to Round Robin info
 - added livestream section
 - changed Kids Camp card to overall Program card that includes RR + Kids Camp information
-- 
 
 
 ### lessons.html:
