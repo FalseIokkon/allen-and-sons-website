@@ -55,3 +55,63 @@ if (menuToggle && siteNav) {
     }
   });
 }
+
+
+// Announcements:
+window.handleAnnouncementData = function (data) {
+  console.log("handleAnnouncementData fired:", data);
+
+  const bar = document.getElementById("announcement");
+  const container = document.getElementById("announcement-container");
+
+  if (!bar || !container) return;
+
+  if (!data.active || !data.message) {
+    bar.hidden = true;
+    return;
+  }
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const startDate = data.startDate ? new Date(data.startDate) : null;
+  const endDate = data.endDate ? new Date(data.endDate) : null;
+
+  if (startDate && !Number.isNaN(startDate.getTime())) {
+    startDate.setHours(0, 0, 0, 0);
+    if (today < startDate) {
+      bar.hidden = true;
+      return;
+    }
+  }
+
+  if (endDate && !Number.isNaN(endDate.getTime())) {
+    endDate.setHours(0, 0, 0, 0);
+    if (today > endDate) {
+      bar.hidden = true;
+      return;
+    }
+  }
+
+  container.textContent = `${data.message}`;
+  bar.hidden = false;
+};
+
+function loadAnnouncement() {
+  const script = document.createElement("script");
+  script.src =
+  "https://script.google.com/macros/s/AKfycbyz8mHsYlHYFFqxEvORnFY4yLpwW6irON3p3U-wUy78GnxJoHd2PiWLKYM4CAH3R3KA/exec?prefix=handleAnnouncementData";
+  script.async = true;
+  document.body.appendChild(script);
+}
+
+const closeBtn = document.querySelector(".announcement-close");
+const bar = document.getElementById("announcement");
+
+if (closeBtn && bar) {
+  closeBtn.addEventListener("click", () => {
+    bar.hidden = true;
+  });
+}
+
+loadAnnouncement();
