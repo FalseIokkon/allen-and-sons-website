@@ -8,7 +8,6 @@ if (menuToggle && siteNav) {
     menuToggle.setAttribute("aria-expanded", "true");
     menuToggle.textContent = "✕";
 
-    // Prevent background scrolling
     document.documentElement.classList.add("menu-open");
     document.body.classList.add("menu-open");
   };
@@ -18,12 +17,10 @@ if (menuToggle && siteNav) {
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.textContent = "☰";
 
-    // Restore background scrolling
     document.documentElement.classList.remove("menu-open");
     document.body.classList.remove("menu-open");
   };
 
-  // Toggle button click
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.contains("open");
     if (isOpen) {
@@ -33,19 +30,16 @@ if (menuToggle && siteNav) {
     }
   });
 
-  // Close menu when clicking a link
   navLinks.forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 
-  // Close menu with Escape key
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeMenu();
     }
   });
 
-  // Close menu when clicking outside
   document.addEventListener("click", (event) => {
     const clickedInsideNav = siteNav.contains(event.target);
     const clickedToggle = menuToggle.contains(event.target);
@@ -56,17 +50,16 @@ if (menuToggle && siteNav) {
   });
 }
 
-
-// Announcements:
 window.handleAnnouncementData = function (data) {
   console.log("handleAnnouncementData fired:", data);
+
   const bar = document.getElementById("announcement");
   const container = document.getElementById("announcement-container");
   const closeBtn = document.querySelector(".announcement-close");
 
   if (!bar || !container) return;
 
-  if (!data.message) {
+  if (!data?.message) {
     bar.hidden = true;
     return;
   }
@@ -101,7 +94,7 @@ window.handleAnnouncementData = function (data) {
     return;
   }
 
-  container.textContent = `${data.message}`;
+  container.textContent = data.message;
   bar.hidden = false;
 
   if (closeBtn) {
@@ -121,6 +114,11 @@ function loadAnnouncement() {
   script.src =
     "https://script.google.com/macros/s/AKfycbyz8mHsYlHYFFqxEvORnFY4yLpwW6irON3p3U-wUy78GnxJoHd2PiWLKYM4CAH3R3KA/exec?prefix=handleAnnouncementData";
   script.async = true;
+
+  script.onerror = () => {
+    console.error("Failed to load announcement script.");
+  };
+
   document.body.appendChild(script);
 }
 
