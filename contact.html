@@ -8,6 +8,7 @@
       name="description"
       content="Contact Allen & Sons Table Tennis Club for questions about lessons, hours, or your first visit."
     />
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
     <link rel="stylesheet" href="./src/styles/main.css" />
     <link rel="stylesheet" href="./src/styles/contact.css" />
   </head>
@@ -30,7 +31,7 @@
 
           <nav class="site-nav" id="site-nav" aria-label="Main navigation">
             <ul class="nav-list">
-              <li><a href="./index.html" class="active">Home</a></li>
+              <li><a href="./index.html">Home</a></li>
               <li><a href="./about.html">About</a></li>
               <li><a href="./coaches.html">Coaches</a></li>
               <li><a href="./lessons.html">Lessons</a></li>
@@ -108,45 +109,22 @@
         <div class="container">
           <div class="section-heading">
             <p class="section-tag">Send a Message</p>
-            <h2>Ask about lessons, programs, or your first visit</h2>
+            <h2>Reach out online</h2>
+            <p>
+              Fill out the form below and we’ll get back to you as soon as possible.
+            </p>
           </div>
 
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            class="contact-form"
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <p hidden>
-              <label>
-                Don't fill this out:
-                <input name="bot-field" />
-              </label>
-            </p>
-
-            <div class="form-grid">
-              <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-
-              <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-            </div>
-
-            <div>
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="button button-primary">
-              Send Message
-            </button>
-          </form>
+          <div class="contact-form-embed card">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLScdnCz7LzaKCmXzaCVn3mTRqPZV_-9wbqmP8tQ-qmfXU3xD5w/viewform?embedded=true"
+              title="Allen & Sons TTC Contact Form"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            >
+              Loading…
+            </iframe>
+          </div>
         </div>
       </section>
     </main>
