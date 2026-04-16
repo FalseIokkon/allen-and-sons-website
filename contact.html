@@ -124,7 +124,6 @@
                 target="hidden_iframe"
                 onsubmit="handleFormSubmit()"
               >
-
                 <div class="form-grid">
                   <div class="form-group">
                     <label for="contact-name">Name</label>
@@ -150,6 +149,17 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="contact-phone">Phone (optional)</label>
+                  <input
+                    id="contact-phone"
+                    type="tel"
+                    inputmode="tel"
+                    name="entry.2024046494"
+                    placeholder="Your phone number"
+                  />
+                </div>
+
+                <div class="form-group">
                   <label for="contact-message">Message</label>
                   <textarea
                     id="contact-message"
@@ -163,6 +173,20 @@
                 <button type="submit" class="button button-primary">
                   Send Message
                 </button>
+
+                <div class="form-alt-link">
+                  <p>
+                    Prefer not to use this form?
+                    <a
+                      href="https://forms.gle/A6JHhJk3NUgB8kK19"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Use the Google Form directly.
+                    </a>
+                  </p>
+                </div>
+
               </form>
             </div>
 

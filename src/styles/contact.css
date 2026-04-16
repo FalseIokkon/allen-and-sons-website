@@ -50,6 +50,8 @@
   box-shadow: 0 0 0 3px rgba(15, 61, 145, 0.12);
 }
 
+
+
 .contact-form textarea {
   resize: vertical;
   min-height: 160px;
@@ -89,6 +91,29 @@
 .form-success p {
   margin-bottom: 0;
   color: var(--muted);
+}
+
+.form-alt-link {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.form-alt-link p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.form-alt-link a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.form-alt-link a:hover {
+  color: var(--accent);
 }
 
 @media (max-width: 720px) {
