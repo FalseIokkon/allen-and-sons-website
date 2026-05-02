@@ -27,11 +27,10 @@
 }
 
 /* Kids camp flyer image */
-.full-width-image {
-  width: 100%;
-  max-width: 300px;
-  max-height: none;
+.split-section .full-width-image {
+  width: 80%;
   height: auto;
+  max-height: none;
   object-fit: contain;
 }
 
