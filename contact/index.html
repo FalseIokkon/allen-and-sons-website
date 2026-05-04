@@ -226,6 +226,10 @@
             formError.hidden = false;
             submitButton.disabled = false;
             submitButton.textContent = "Send Message";
+
+            if (window.turnstile) {
+              turnstile.reset();
+            }
           }
         });
       </script>
