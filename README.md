@@ -12,9 +12,10 @@ The announcements feed is powered by a Google Sheet, allowing updates to be refl
 
 # What I learned from this project:
 - How to build and structure a multi-page static website using HTML, CSS, JavaScript, and Vite
-- How to integrate alternative tools like Google Forms and Google Sheets to add practical site functionality without a custom backend
+- How to integrate alternative tools like Cloudflare Workers + Google Forms to add practical site functionality without a custom backend
 - How to deploy and manage a live website using GitHub Pages, Netlify, and Cloudflare
 - How to recreate an existing website from the ground up with a cleaner, more modern, and more maintainable design
 - How to improve responsive design so the site works well across desktop and mobile devices
 - How to organize assets, styles, and page structure for a larger front-end project
 - How to connect external services like live stream embeds and dynamic announcements into a static website
+- How to Cloudflare features like Turnstile to help prevent bots from sending spam contact form submissions
