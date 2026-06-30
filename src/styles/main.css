@@ -283,13 +283,17 @@ p {
 .cta-box {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: center;
+  gap: 4rem;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #fff;
   border-radius: 28px;
   padding: 2rem;
   box-shadow: var(--shadow);
+}
+
+.hero-actions {
+  flex-shrink: 0;
 }
 
 .cta-box .section-tag {
