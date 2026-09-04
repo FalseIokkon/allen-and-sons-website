@@ -4,35 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Allen & Sons TTC</title>
-    <meta
-      name="description"
-      content="Learn more about Allen & Sons Table Tennis Club, our facility, hours, location, and pricing in Canoga Park, California."
-    />
+    <meta name="description" content="Learn more about Allen & Sons Table Tennis Club — our facility, hours, location, and pricing in Canoga Park, California." />
+    <meta name="theme-color" content="#0a1120" />
+    <link rel="canonical" href="https://mypingpongclub.com/about/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Allen &amp; Sons TTC" />
+    <meta property="og:title" content="About | Allen & Sons TTC" />
+    <meta property="og:description" content="Learn more about Allen & Sons Table Tennis Club — our facility, hours, location, and pricing in Canoga Park, California." />
+    <meta property="og:url" content="https://mypingpongclub.com/about/" />
+
     <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="stylesheet" href="/src/styles/about.css" />
+    <script>
+      document.documentElement.classList.add("js");
+      // Failsafe: if the reveal script never runs, drop the class so that no
+      // content is left stuck at opacity 0.
+      setTimeout(function () {
+        var root = document.documentElement;
+        if (!root.hasAttribute("data-reveal-ready")) root.classList.remove("js");
+      }, 2500);
+    </script>
   </head>
-
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <div class="site-top">
+      <div class="announcement-bar" id="announcement" hidden>
+        <div class="announcement-inner">
+          <div id="announcement-container"></div>
+          <button
+            class="announcement-close"
+            type="button"
+            aria-label="Dismiss announcement"
+          >
+            ✕
+          </button>
+        </div>
+      </div>
+
       <header class="site-header">
         <div class="container header-inner">
-          <a href="/" class="logo">Allen & Sons TTC</a>
+          <a href="/" class="logo">
+            <span class="logo__text">
+              Allen &amp; Sons
+              <span class="logo__sub">Table Tennis Club</span>
+            </span>
+          </a>
 
           <button
             class="menu-toggle"
             type="button"
-            aria-label="Toggle menu"
+            aria-label="Open menu"
             aria-expanded="false"
             aria-controls="site-nav"
           >
-            ☰
+            <span></span><span></span><span></span>
           </button>
 
           <nav class="site-nav" id="site-nav" aria-label="Main navigation">
             <ul class="nav-list">
               <li><a href="/">Home</a></li>
-              <li><a href="/about/" class="active">About</a></li>
+              <li><a href="/about/" class="active" aria-current="page">About</a></li>
               <li><a href="/coaches/">Coaches</a></li>
               <li><a href="/lessons/">Lessons</a></li>
               <!--<li><a href="/gallery/">Gallery</a></li>-->
@@ -41,154 +81,216 @@
           </nav>
         </div>
       </header>
-
-      <div class="announcement-bar" id="announcement" hidden>
-        <div class="announcement-inner">
-          <div id="announcement-container"></div>
-          <button class="announcement-close" aria-label="Close announcement">✕</button>
-        </div>
-      </div>
     </div>
+    <div class="nav-backdrop"></div>
 
-    <main>
-      <section class="page-hero-alt">
-        <div class="page-hero-alt-overlay">
-          <div class="container">
-            <p class="section-tag">About The</p>
-            <h1>Allen & Sons Table Tennis Club</h1>
+    <main id="main">
+      <section class="page-hero">
+        <div class="page-hero__media">
+          <img
+            src="/images/hero/storefront.avif"
+            alt=""
+            width="584"
+            height="438"
+            fetchpriority="high"
+          />
+        </div>
+
+        <div class="container page-hero__inner">
+          <p class="eyebrow eyebrow--light">About Us</p>
+          <h1>Allen &amp; Sons Table Tennis Club</h1>
+          <p class="page-hero__lede">Eight ITTF-approved tables, professional coaching, and an air-conditioned space built for practice, training, and open play.</p>
+        </div>
+      </section>
+
+      <!-- ========================== Facility ========================== -->
+      <section class="section">
+        <div class="container">
+          <div class="split">
+            <div class="prose" data-reveal>
+              <p class="eyebrow">Our Facility</p>
+              <h2>Built for practice, training, and open play</h2>
+
+              <ul>
+                <li>8 ITTF-approved Butterfly Centerfold tables</li>
+                <li>Air-conditioned playing environment</li>
+                <li>Paddles and balls available</li>
+                <li>Advanced training robot system</li>
+                <li>Complimentary WiFi</li>
+              </ul>
+
+              <p>
+                The robot system allows players to train with consistent ball
+                placement and automatic return, making it a great tool for
+                improving technique, footwork, and repetition.
+              </p>
+            </div>
+
+            <div class="facility-media" data-reveal>
+              <div class="media-frame">
+                <img
+                  src="/images/gallery/club-play.avif"
+                  alt="Players at the tables inside Allen &amp; Sons Table Tennis Club"
+                  width="584"
+                  height="834"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="facility-badge">
+                <strong>8</strong>
+                <span>ITTF tables</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container split-section">
-          <div>
-            <p class="section-tag">Our Facility</p>
-            <h2>Built for practice, training, and open play</h2>
-
-            <ul>
-              <li>8 ITTF-approved Butterfly Centerfold tables</li>
-              <li>Air-conditioned playing environment</li>
-              <li>Paddles and balls available</li>
-              <li>Advanced training robot system</li>
-              <li>Complimentary WiFi</li>
-            </ul>
-
+      <!-- =========================== Pricing =========================== -->
+      <section class="section section--alt" id="pricing">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Pricing</p>
+            <h2>Flexible options for open play, lessons, and membership</h2>
             <p>
-              The robot system allows players to train with consistent ball placement and automatic return, making it a great tool for improving technique, footwork, and repetition.
+              Pay as you go or join as a member — whichever fits how often you
+              play.
             </p>
           </div>
 
-          <div>
-            <img
-              src="/images/gallery/club-play.avif"
-              alt="Players inside the club"
-              class="about-image"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-alt">
-        <div class="container">
-          <div class="section-heading">
-            <p class="section-tag">Pricing</p>
-            <h2>Flexible options for open play, lessons, and membership</h2>
-          </div>
-
-          <div class="card-grid card-grid-three">
-            <article class="card">
-              <h3>Open Play</h3>
-              <p>1 Hour: $15</p>
-              <p>2 Hours: $20</p>
-              <p>Day Pass: $25</p>
+          <div class="grid grid--3 price-grid" data-stagger>
+            <article class="card card--hover price-card" data-reveal>
+              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v14"/></svg> Open Play</h3>
+              <ul class="rows">
+                <li><span class="rows__label">1 Hour</span><span class="rows__value">$15</span></li>
+                <li><span class="rows__label">2 Hours</span><span class="rows__value">$20</span></li>
+                <li><span class="rows__label">Day Pass</span><span class="rows__value">$25</span></li>
+              </ul>
             </article>
 
-            <article class="card">
-              <h3>Membership</h3>
-              <p>Existing Members: $100 per month</p>
-              <p>New Members: $110 per month</p>
-              <p>Families: $90 per month (per person)</p>
-              <p>Yearly Membership: $1050</p>
+            <article class="card card--hover price-card price-card--featured" data-reveal>
+              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg> Membership <span class="price-tag">Best value</span></h3>
+              <ul class="rows">
+                <li><span class="rows__label">Existing members</span><span class="rows__value">$100 / mo</span></li>
+                <li><span class="rows__label">New members</span><span class="rows__value">$110 / mo</span></li>
+                <li><span class="rows__label">Families (per person)</span><span class="rows__value">$90 / mo</span></li>
+                <li><span class="rows__label">Yearly membership</span><span class="rows__value">$1050</span></li>
+              </ul>
             </article>
 
-            <article class="card">
-              <h3>Lessons</h3>
-              <p>Private (1 hr): $80</p>
-              <p>Private (30 min): $45</p>
-              <p>Group (2 hours): $35</p>
+            <article class="card card--hover price-card" data-reveal>
+              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Lessons</h3>
+              <ul class="rows">
+                <li><span class="rows__label">Private (1 hr)</span><span class="rows__value">$80</span></li>
+                <li><span class="rows__label">Private (30 min)</span><span class="rows__value">$45</span></li>
+                <li><span class="rows__label">Group (2 hours)</span><span class="rows__value">$35</span></li>
+              </ul>
             </article>
 
-            <article class="card">
-              <h3>Programs</h3>
+            <article class="card card--hover price-card" data-reveal>
+              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> Programs</h3>
               <ul class="card-list">
                 <li>
-                  <a href="/data/friday-night-round-robin-flyer.pdf" class="text-link" target="_blank">
+                  <a
+                    href="/data/friday-night-round-robin-flyer.pdf"
+                    class="link"
+                    target="_blank"
+                  >
                     Friday Round Robin (6:30 PM)
                   </a>
                 </li>
                 <li>
-                  <a href="/lessons/#kids-camp" class="text-link">
-                    Saturday Kids Camp (4 - 6 PM)
+                  <a href="/lessons/#kids-camp" class="link">
+                    Saturday Kids Camp (4 – 6 PM)
                   </a>
                 </li>
               </ul>
             </article>
 
-            <article class="card">
-              <h3>Miscellaneous</h3>
-              <p>Robot: $10 / 30 min (free for members)</p>
-              <p>$1 Paddle for a Day</p>
+            <article class="card card--hover price-card" data-reveal>
+              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/><circle cx="12" cy="12" r="4"/></svg> Miscellaneous</h3>
+              <ul class="rows">
+                <li><span class="rows__label">Robot (30 min)<br /><small>Free for members</small></span><span class="rows__value">$10</span></li>
+                <li><span class="rows__label">Paddle for a day</span><span class="rows__value">$1</span></li>
+              </ul>
+            </article>
+
+            <article class="card card--hover price-card" data-reveal>
+              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Questions?</h3>
+              <p>
+                Not sure which option fits you best? Send us a message and we'll
+                help you pick the right one.
+              </p>
+              <div class="section-action" style="margin-top: auto; padding-top: 1.25rem">
+                <a href="/contact/#contact-form" class="btn btn--secondary">Get in touch</a>
+              </div>
             </article>
           </div>
 
-          <p class="about-note">
-            Membership is by calendar month (1st to 1st). Lesson fees <b>do not</b> include floor fees if you plan on playing afterward.
+          <p class="note" data-reveal>
+            Membership is by calendar month (1st to 1st). Lesson fees
+            <b>do not</b> include floor fees if you plan on playing afterward.
           </p>
         </div>
       </section>
 
+      <!-- =========================== Visit us =========================== -->
       <section class="section">
         <div class="container">
-          <div class="section-heading">
-            <p class="section-tag">Visit Us</p>
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Visit Us</p>
             <h2>Stop by and start playing</h2>
           </div>
 
-          <div class="card-grid card-grid-three">
-            <article class="card">
-              <h3>Location</h3>
-              <p>
-                <a
-                  href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
-                  class="text-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  21915 Sherman Way<br />
-                  Canoga Park, CA 91303
-                </a>
-              </p>
-              <p>(Free parking in the back!)</p>
-            </article>
+          <div class="visit-grid">
+            <div class="visit-cards" data-stagger>
+              <article class="card card--hover" data-reveal>
+                <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <h3>Location</h3>
+                <p>
+                  <a
+                    href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+                    class="link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    21915 Sherman Way<br />
+                    Canoga Park, CA 91303
+                  </a>
+                </p>
+                <p>Free parking in the back!</p>
+              </article>
 
-            <article class="card">
-              <h3>Hours</h3>
-              <p>
-                Weekdays: 9 AM - 9:30 PM<br />
-                Weekends: 9 AM - 4 PM
-              </p>
-            </article>
+              <article class="card card--hover" data-reveal>
+                <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <h3>Hours</h3>
+                <ul class="rows">
+                  <li><span class="rows__label">Weekdays</span><span class="rows__value">9 AM – 9:30 PM</span></li>
+                  <li><span class="rows__label">Weekends</span><span class="rows__value">9 AM – 4 PM</span></li>
+                </ul>
+              </article>
 
-            <article class="card">
-              <h3>Contact</h3>
-              <p>
-                <a href="tel:18183305756" class="text-link">(818) 330-5756</a><br />
-                <a href="mailto:mypingpongclub@gmail.com" class="text-link">
-                  mypingpongclub@gmail.com
-                </a>
-              </p>
-            </article>
+              <article class="card card--hover" data-reveal>
+                <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+                <h3>Contact</h3>
+                <p><a href="tel:18183305756" class="link">(818) 330-5756</a></p>
+                <p>
+                  <a href="mailto:mypingpongclub@gmail.com" class="link">
+                    mypingpongclub@gmail.com
+                  </a>
+                </p>
+              </article>
+            </div>
+
+            <div class="map-frame" data-reveal>
+            <iframe
+              title="Map showing Allen &amp; Sons Table Tennis Club at 21915 Sherman Way, Canoga Park, CA"
+              src="https://www.google.com/maps?q=21915%20Sherman%20Way,%20Canoga%20Park,%20CA%2091303&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
           </div>
         </div>
       </section>
@@ -197,36 +299,88 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <h3>Allen & Sons TTC</h3>
-          <p class="footer-address">
-            21915 Sherman Way<br />
-            Canoga Park, CA 91303
+          <a href="/" class="logo">
+            <span class="logo__text">
+              Allen &amp; Sons
+              <span class="logo__sub">Table Tennis Club</span>
+            </span>
+          </a>
+          <p>
+            Coaching, open play, and youth programs for every level — seven days
+            a week in Canoga Park, California.
           </p>
-          <p class="site-credit">
-            Site by
-            <!--<a href="https://jonathanyun.fyi" target="_blank" rel="noopener noreferrer">
-              Jonathan Yun
+
+          <div class="footer-social">
+            <a
+              href="https://www.youtube.com/@AllenandSons"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Allen &amp; Sons TTC on YouTube"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
             </a>
-            -->
-            Jonathan Yun
-          </p>
+            <a
+              href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Find us on Google Maps"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+            <a href="mailto:mypingpongclub@gmail.com" aria-label="Email the club">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
         </div>
 
-        <div class="footer-hours">
-          <h4>Hours</h4>
-          <p>Weekdays: 9 AM - 9:30 PM</p>
-          <p>Weekends: 9 AM - 4 PM</p>
-        </div>
-
-        <div class="footer-nav">
+        <div class="footer-col">
           <h4>Explore</h4>
           <ul>
-            <li><a href="/coaches/">Coaches</a></li>
             <li><a href="/about/">About</a></li>
+            <li><a href="/coaches/">Coaches</a></li>
             <li><a href="/lessons/">Lessons</a></li>
             <!--<li><a href="/gallery/">Gallery</a></li>-->
             <li><a href="/contact/">Contact</a></li>
           </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Weekdays<br />9 AM – 9:30 PM</p>
+          <p>Weekends<br />9 AM – 4 PM</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit &amp; Contact</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <a
+                href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                21915 Sherman Way<br />Canoga Park, CA 91303
+              </a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              <a href="tel:18183305756">(818) 330-5756</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <a href="mailto:mypingpongclub@gmail.com">
+                mypingpongclub@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© <span id="year">2026</span> Allen &amp; Sons Table Tennis Club</p>
+          <p class="site-credit">Site by Jonathan Yun</p>
         </div>
       </div>
     </footer>

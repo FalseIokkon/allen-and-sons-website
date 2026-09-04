@@ -1,51 +1,132 @@
-/* Lessons page only */
+/* ==========================================================================
+   Lessons page
+   ========================================================================== */
 
-/* Private lesson cards */
-.card-grid-three .card p {
-  font-size: 1.05rem;
+/* --- Private lesson price cards ------------------------------------------ */
+.lesson-card {
+  padding: 2rem 1.75rem;
 }
 
-/* Group lesson cards */
-.card-grid-four .card h3 {
-  margin-bottom: 0.5rem;
+.lesson-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin: 0.25rem 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.9rem + 1.4vw, 3rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--primary);
 }
 
-.card-grid-four .card p {
-  margin-bottom: 0.35rem;
+.lesson-card__price small {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--text-muted);
 }
 
-.card-grid-four .card p:last-child {
-  margin-bottom: 0;
+.lesson-card--cta {
+  background: linear-gradient(160deg, var(--primary-soft) 0%, var(--surface) 55%);
+  border-color: #c6d5fb;
 }
 
-/* Schedule note under adult group lessons */
-.lesson-note {
-  margin-top: 2rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-  max-width: 900px;
+.lesson-card--cta .btn {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
-/* Kids camp flyer image */
-.split-section .full-width-image {
-  width: 80%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
+/* --- Weekly schedule ----------------------------------------------------- */
+.schedule-card {
+  padding: 0;
+  overflow: hidden;
 }
 
-/* Kids camp section alignment */
-.lessons-camp {
+.schedule-card__day {
+  padding: 0.85rem 1.5rem;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.schedule-card__body {
+  padding: 1.5rem;
+}
+
+.schedule-card__time {
+  margin-bottom: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.schedule-card__coach {
+  display: inline-flex;
   align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
 }
 
-/* Mobile tweaks */
-@media (max-width: 720px) {
-  .full-width-image {
-    max-width: 100%;
-  }
+.schedule-card__coach svg {
+  width: 16px;
+  height: 16px;
+  color: var(--accent);
+}
 
-  .lesson-note {
-    margin-top: 1.5rem;
-  }
+/* --- Kids camp ----------------------------------------------------------- */
+.camp-flyer {
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.camp-flyer img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+}
+
+.camp-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.camp-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--speed) ease, color var(--speed) ease,
+    transform var(--speed) var(--ease-out);
+}
+
+.camp-contact a:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.camp-contact svg {
+  width: 17px;
+  height: 17px;
+  color: var(--accent);
 }

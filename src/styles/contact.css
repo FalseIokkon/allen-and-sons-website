@@ -1,16 +1,29 @@
-/* Contact page */
+/* ==========================================================================
+   Contact page
+   ========================================================================== */
+.contact-layout {
+  display: grid;
+  /* minmax(0, …) so a wide child (the Turnstile iframe) can't blow out the
+     track and drag the sidebar off-screen with it. */
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* --- Form ---------------------------------------------------------------- */
+.contact-card {
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
 
 .contact-form {
-  max-width: 640px;
-  margin: 0;
   display: grid;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
 }
 
 .form-group {
@@ -19,119 +32,256 @@
 }
 
 .contact-form label {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--text);
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 0.8rem 0.9rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
-  background: var(--surface);
+  background: var(--surface-2);
   color: var(--text);
   font: inherit;
-  box-sizing: border-box;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.98rem;
+  transition: border-color var(--speed) ease, box-shadow var(--speed) ease,
+    background var(--speed) ease;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: var(--muted);
+  color: #93a0b3;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
+  background: var(--surface);
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15, 61, 145, 0.12);
+  box-shadow: 0 0 0 4px rgba(27, 79, 216, 0.12);
 }
-
-
 
 .contact-form textarea {
-  resize: vertical;
   min-height: 160px;
+  resize: vertical;
 }
 
-.contact-form .button {
-  margin-top: 0.5rem;
+.contact-form .btn {
   justify-self: start;
+  margin-top: 0.25rem;
 }
 
-/* Custom Google Forms-backed form */
-.contact-form-embed {
-  max-width: 760px;
+/* Turnstile renders a fixed ~300px-wide widget and sets its own min-width, so
+   as a grid item it forces the whole card wider than a small phone's viewport
+   (350px card inside a 320px screen — the right edge of the inputs and the
+   Send button were being clipped away by `overflow-x: clip`). min-width: 0
+   lets the track shrink; the narrow breakpoints scale the widget to fit. */
+.turnstile-wrap {
+  min-width: 0;
+}
+
+.cf-turnstile {
+  min-height: 65px;
+}
+
+.form-error {
   margin: 0;
-  padding: 1rem;
-  overflow: hidden;
+  padding: 0.85rem 1rem;
+  border: 1px solid #f3c9c6;
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  font-size: 0.92rem;
+  color: #a5241c;
 }
 
-.contact-form-embed.card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  padding: 2rem;
+.form-error[hidden] {
+  display: none;
 }
 
 .form-success {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  padding: 2.5rem 1rem;
   text-align: center;
-  padding: 2rem 1rem;
+}
+
+.form-success[hidden] {
+  display: none;
+}
+
+.form-success__icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.form-success__icon svg {
+  width: 30px;
+  height: 30px;
 }
 
 .form-success h3 {
-  margin-bottom: 0.5rem;
-  color: var(--primary);
+  margin-bottom: 0.25rem;
+  font-size: 1.4rem;
 }
 
 .form-success p {
   margin-bottom: 0;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
-.form-alt-link {
-  margin-top: 0.75rem;
-  text-align: center;
+/* --- Contact detail sidebar ---------------------------------------------- */
+.contact-aside {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
 }
 
-.form-alt-link p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--muted);
+.contact-item {
+  /* .card sets flex-direction: column — this row layout has to opt back out. */
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.35rem 1.5rem;
 }
 
-.form-alt-link a {
+.contact-item__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: none;
+  border-radius: 12px;
+  background: var(--primary-soft);
   color: var(--primary);
+}
+
+.contact-item__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-item h3 {
+  margin-bottom: 0.3rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  transition: color 0.2s ease;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
-.form-alt-link a:hover {
-  color: var(--accent);
+.contact-item p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: var(--text);
+  /* "mypingpongclub@gmail.com" has no break opportunity, so its min-content
+     width was pushing these cards past the edge of a 320px screen. `anywhere`
+     rather than `break-word` because only `anywhere` shrinks min-content. */
+  overflow-wrap: anywhere;
 }
 
-@media (max-width: 720px) {
+.contact-item a {
+  color: var(--text);
+  transition: color var(--speed) ease;
+}
+
+.contact-item a:hover {
+  color: var(--primary);
+}
+
+.contact-item small {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- Map ----------------------------------------------------------------- */
+.map-frame {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-subtle);
+}
+
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 0;
+  filter: grayscale(0.25) contrast(1.05);
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+@media (max-width: 980px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .form-grid {
     grid-template-columns: 1fr;
   }
 
-  .contact-form-embed {
-    padding: 0.75rem;
-  }
-
-  .contact-form-embed.card {
-    padding: 1.25rem;
-    border-radius: var(--radius-md);
-  }
-
-  .contact-form .button {
-    width: 100%;
+  .contact-form .btn {
     justify-self: stretch;
+  }
+
+  .map-frame iframe {
+    height: 320px;
+  }
+}
+
+@media (max-width: 460px) {
+  .contact-card {
+    padding: 1.15rem;
+  }
+
+  /* Buy back enough width for the email address to stay on one line rather
+     than breaking mid-word. overflow-wrap: anywhere stays as the safety net. */
+  .contact-item {
+    padding: 1.1rem 1.15rem;
+    gap: 0.75rem;
+  }
+
+  .contact-item p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-item__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Below ~380px there is no longer room for the widget at full size. */
+@media (max-width: 380px) {
+  .turnstile-wrap {
+    height: 56px;
+    overflow: hidden;
+  }
+
+  .turnstile-wrap .cf-turnstile {
+    transform: scale(0.82);
+    transform-origin: left top;
   }
 }

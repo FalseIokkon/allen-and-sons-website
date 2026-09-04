@@ -4,29 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Allen & Sons TTC</title>
-    <meta
-      name="description"
-      content="Contact Allen & Sons Table Tennis Club for questions about lessons, hours, or your first visit."
-    />
+    <meta name="description" content="Contact Allen & Sons Table Tennis Club for questions about lessons, hours, memberships, or your first visit." />
+    <meta name="theme-color" content="#0a1120" />
+    <link rel="canonical" href="https://mypingpongclub.com/contact/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Allen &amp; Sons TTC" />
+    <meta property="og:title" content="Contact | Allen & Sons TTC" />
+    <meta property="og:description" content="Contact Allen & Sons Table Tennis Club for questions about lessons, hours, memberships, or your first visit." />
+    <meta property="og:url" content="https://mypingpongclub.com/contact/" />
+
     <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="stylesheet" href="/src/styles/contact.css" />
+    <script>
+      document.documentElement.classList.add("js");
+      // Failsafe: if the reveal script never runs, drop the class so that no
+      // content is left stuck at opacity 0.
+      setTimeout(function () {
+        var root = document.documentElement;
+        if (!root.hasAttribute("data-reveal-ready")) root.classList.remove("js");
+      }, 2500);
+    </script>
   </head>
-
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <div class="site-top">
+      <div class="announcement-bar" id="announcement" hidden>
+        <div class="announcement-inner">
+          <div id="announcement-container"></div>
+          <button
+            class="announcement-close"
+            type="button"
+            aria-label="Dismiss announcement"
+          >
+            ✕
+          </button>
+        </div>
+      </div>
+
       <header class="site-header">
         <div class="container header-inner">
-          <a href="/" class="logo">Allen & Sons TTC</a>
+          <a href="/" class="logo">
+            <span class="logo__text">
+              Allen &amp; Sons
+              <span class="logo__sub">Table Tennis Club</span>
+            </span>
+          </a>
 
           <button
             class="menu-toggle"
             type="button"
-            aria-label="Toggle menu"
+            aria-label="Open menu"
             aria-expanded="false"
             aria-controls="site-nav"
           >
-            ☰
+            <span></span><span></span><span></span>
           </button>
 
           <nav class="site-nav" id="site-nav" aria-label="Main navigation">
@@ -36,241 +76,330 @@
               <li><a href="/coaches/">Coaches</a></li>
               <li><a href="/lessons/">Lessons</a></li>
               <!--<li><a href="/gallery/">Gallery</a></li>-->
-              <li><a href="/contact/" class="nav-button">Contact</a></li>
+              <li><a href="/contact/" class="nav-button active" aria-current="page">Contact</a></li>
             </ul>
           </nav>
         </div>
       </header>
-
-      <div class="announcement-bar" id="announcement" hidden>
-        <div class="announcement-inner">
-          <div id="announcement-container"></div>
-          <button class="announcement-close" aria-label="Close announcement">
-            ✕
-          </button>
-        </div>
-      </div>
     </div>
+    <div class="nav-backdrop"></div>
 
-    <main>
-      <section class="page-hero-alt">
-        <div class="page-hero-alt-overlay">
-          <div class="container">
-            <p class="section-tag">Get In Touch</p>
-            <h1>Contact Us</h1>
-          </div>
+    <main id="main">
+      <section class="page-hero">
+        <div class="page-hero__media">
+          <img
+            src="/images/hero/storefront.avif"
+            alt=""
+            width="584"
+            height="438"
+            fetchpriority="high"
+          />
+        </div>
+
+        <div class="container page-hero__inner">
+          <p class="eyebrow eyebrow--light">Get In Touch</p>
+          <h1>Contact Us</h1>
+          <p class="page-hero__lede">Questions about lessons, memberships, parties, or your first visit? We're happy to help.</p>
         </div>
       </section>
 
-      <section id="contact-form" class="section">
+      <section class="section" id="contact-form">
         <div class="container">
-          <div class="section-heading">
-            <p class="section-tag">Send a Message</p>
-            <h2>Reach out online</h2>
-            <p>
-              Fill out the form below and we'll get back to you as soon as
-              possible.
-            </p>
-          </div>
-
-          <div class="contact-form-embed card">
-            <div id="form-wrapper">
-              <form
-                class="contact-form"
-                id="allen-contact-form"
-                action="https://allen-contact-form.mypingpongclub.workers.dev"
-                method="POST"
-              >
-                <div class="form-grid">
-                  <div class="form-group">
-                    <label for="contact-name">Name</label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      name="name"
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="contact-email">Email</label>
-                    <input
-                      id="contact-email"
-                      type="email"
-                      name="email"
-                      placeholder="Your email"
-                      required
-                    />
-                  </div>
+          <div class="contact-layout">
+            <div class="card contact-card" data-reveal>
+              <div id="form-wrapper">
+                <div class="section-head" style="margin-bottom: 1.75rem">
+                  <p class="eyebrow">Send a Message</p>
+                  <h2>Reach out online</h2>
+                  <p>
+                    Fill out the form below and we'll get back to you as soon as
+                    possible.
+                  </p>
                 </div>
 
-                <div class="form-group">
-                  <label for="contact-phone">Phone</label>
-                  <input
-                    id="contact-phone"
-                    type="tel"
-                    inputmode="tel"
-                    name="phone"
-                    placeholder="Your phone number"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="contact-message">Message</label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    rows="6"
-                    placeholder="How can we help?"
-                    required
-                  ></textarea>
-                </div>
-
-                <div
-                  class="cf-turnstile"
-                  data-sitekey="0x4AAAAAADJCmBgCcnnruWsf"
-                ></div>
-
-                <p id="form-error" class="form-error" hidden>
-                  Something went wrong. Please ensure verification is complete and again.
-                </p>
-
-                <button type="submit" class="button button-primary">
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            <div id="form-success" class="form-success" hidden>
-              <h3>Thank you!</h3>
-              <p>Your message has been submitted. We'll get back to you soon.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-alt">
-        <div class="container">
-          <div class="section-heading">
-            <p class="section-tag">Visit or Call</p>
-            <h2>We'd love to hear from you</h2>
-          </div>
-
-          <div class="card-grid card-grid-three">
-            <article class="card">
-              <h3>Phone</h3>
-              <p>
-                <a href="tel:18183305756" class="text-link">(818) 330-5756</a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Email</h3>
-              <p>
-                <a href="mailto:mypingpongclub@gmail.com" class="text-link">
-                  mypingpongclub@gmail.com
-                </a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Location</h3>
-              <p>
-                <a
-                  href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
-                  target="_blank"
-                  class="text-link"
-                  rel="noopener noreferrer"
+                <form
+                  class="contact-form"
+                  id="allen-contact-form"
+                  action="https://allen-contact-form.mypingpongclub.workers.dev"
+                  method="POST"
                 >
-                  21915 Sherman Way<br />
-                  Canoga Park, CA 91303
-                </a>
-              </p>
-              <p>(Free parking in the back!)</p>
-            </article>
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label for="contact-name">Name</label>
+                      <input
+                        id="contact-name"
+                        type="text"
+                        name="name"
+                        autocomplete="name"
+                        placeholder="Your name"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="contact-email">Email</label>
+                      <input
+                        id="contact-email"
+                        type="email"
+                        name="email"
+                        autocomplete="email"
+                        placeholder="Your email"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contact-phone">Phone</label>
+                    <input
+                      id="contact-phone"
+                      type="tel"
+                      inputmode="tel"
+                      name="phone"
+                      autocomplete="tel"
+                      placeholder="Your phone number"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea
+                      id="contact-message"
+                      name="message"
+                      rows="6"
+                      placeholder="How can we help?"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div class="turnstile-wrap">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADJCmBgCcnnruWsf"></div>
+                  </div>
+
+                  <p id="form-error" class="form-error" role="alert" hidden>
+                    Something went wrong. Please ensure verification is complete
+                    and try again.
+                  </p>
+
+                  <button type="submit" class="btn btn--primary">Send Message</button>
+                </form>
+              </div>
+
+              <div
+                id="form-success"
+                class="form-success"
+                role="status"
+                tabindex="-1"
+                hidden
+              >
+                <div class="form-success__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+                <h3>Thank you!</h3>
+                <p>Your message has been submitted. We'll get back to you soon.</p>
+              </div>
+            </div>
+
+            <aside class="contact-aside" data-stagger>
+              <div class="card card--hover contact-item" data-reveal>
+                <div class="contact-item__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+                <div>
+                  <h3>Phone</h3>
+                  <p><a href="tel:18183305756">(818) 330-5756</a></p>
+                </div>
+              </div>
+
+              <div class="card card--hover contact-item" data-reveal>
+                <div class="contact-item__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                <div>
+                  <h3>Email</h3>
+                  <p>
+                    <a href="mailto:mypingpongclub@gmail.com">
+                      mypingpongclub@gmail.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card card--hover contact-item" data-reveal>
+                <div class="contact-item__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div>
+                  <h3>Location</h3>
+                  <p>
+                    <a
+                      href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      21915 Sherman Way<br />Canoga Park, CA 91303
+                    </a>
+                  </p>
+                  <small>Free parking in the back!</small>
+                </div>
+              </div>
+
+              <div class="card card--hover contact-item" data-reveal>
+                <div class="contact-item__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div>
+                  <h3>Hours</h3>
+                  <p>Weekdays: 9 AM – 9:30 PM</p>
+                  <p>Weekends: 9 AM – 4 PM</p>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
-      <script>
-        const form = document.getElementById("allen-contact-form");
-        const formWrapper = document.getElementById("form-wrapper");
-        const formSuccess = document.getElementById("form-success");
-        const formError = document.getElementById("form-error");
+      <section class="section section--alt">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Find Us</p>
+            <h2>21915 Sherman Way, Canoga Park</h2>
+            <p>Free parking is available in the back of the building.</p>
+          </div>
 
-        form.addEventListener("submit", async function (event) {
-          event.preventDefault();
-
-          formError.hidden = true;
-
-          const submitButton = form.querySelector("button[type='submit']");
-          submitButton.disabled = true;
-          submitButton.textContent = "Sending...";
-
-          try {
-            const formData = new FormData(form);
-
-            const response = await fetch(form.action, {
-              method: "POST",
-              body: formData,
-            });
-
-            if (!response.ok) {
-              throw new Error("Form submission failed");
-            }
-
-            formWrapper.style.display = "none";
-            formSuccess.hidden = false;
-          } catch (error) {
-            formError.hidden = false;
-            submitButton.disabled = false;
-            submitButton.textContent = "Send Message";
-
-            if (window.turnstile) {
-              turnstile.reset();
-            }
-          }
-        });
-      </script>
+          <div class="map-frame" data-reveal>
+            <iframe
+              title="Map showing Allen &amp; Sons Table Tennis Club at 21915 Sherman Way, Canoga Park, CA"
+              src="https://www.google.com/maps?q=21915%20Sherman%20Way,%20Canoga%20Park,%20CA%2091303&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <h3>Allen & Sons TTC</h3>
-          <p class="footer-address">
-            21915 Sherman Way<br />
-            Canoga Park, CA 91303
+          <a href="/" class="logo">
+            <span class="logo__text">
+              Allen &amp; Sons
+              <span class="logo__sub">Table Tennis Club</span>
+            </span>
+          </a>
+          <p>
+            Coaching, open play, and youth programs for every level — seven days
+            a week in Canoga Park, California.
           </p>
-          <p class="site-credit">
-            Site by
-            <!--<a href="https://jonathanyun.fyi" target="_blank" rel="noopener noreferrer">
-              Jonathan Yun
+
+          <div class="footer-social">
+            <a
+              href="https://www.youtube.com/@AllenandSons"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Allen &amp; Sons TTC on YouTube"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
             </a>
-            -->
-            Jonathan Yun
-          </p>
+            <a
+              href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Find us on Google Maps"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+            <a href="mailto:mypingpongclub@gmail.com" aria-label="Email the club">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
         </div>
 
-        <div class="footer-hours">
-          <h4>Hours</h4>
-          <p>Weekdays: 9 AM - 9:30 PM</p>
-          <p>Weekends: 9 AM - 4 PM</p>
-        </div>
-
-        <div class="footer-nav">
+        <div class="footer-col">
           <h4>Explore</h4>
           <ul>
-            <li><a href="/coaches/">Coaches</a></li>
             <li><a href="/about/">About</a></li>
+            <li><a href="/coaches/">Coaches</a></li>
             <li><a href="/lessons/">Lessons</a></li>
             <!--<li><a href="/gallery/">Gallery</a></li>-->
             <li><a href="/contact/">Contact</a></li>
           </ul>
         </div>
+
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Weekdays<br />9 AM – 9:30 PM</p>
+          <p>Weekends<br />9 AM – 4 PM</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit &amp; Contact</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <a
+                href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                21915 Sherman Way<br />Canoga Park, CA 91303
+              </a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              <a href="tel:18183305756">(818) 330-5756</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <a href="mailto:mypingpongclub@gmail.com">
+                mypingpongclub@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© <span id="year">2026</span> Allen &amp; Sons Table Tennis Club</p>
+          <p class="site-credit">Site by Jonathan Yun</p>
+        </div>
       </div>
     </footer>
+
+    <script>
+      const form = document.getElementById("allen-contact-form");
+      const formWrapper = document.getElementById("form-wrapper");
+      const formSuccess = document.getElementById("form-success");
+      const formError = document.getElementById("form-error");
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        formError.hidden = true;
+
+        const submitButton = form.querySelector("button[type='submit']");
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        try {
+          const formData = new FormData(form);
+
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+          });
+
+          if (!response.ok) {
+            throw new Error("Form submission failed");
+          }
+
+          formWrapper.hidden = true;
+          formSuccess.hidden = false;
+          formSuccess.focus();
+        } catch (error) {
+          formError.hidden = false;
+          submitButton.disabled = false;
+          submitButton.textContent = "Send Message";
+
+          if (window.turnstile) {
+            turnstile.reset();
+          }
+        }
+      });
+    </script>
 
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js"

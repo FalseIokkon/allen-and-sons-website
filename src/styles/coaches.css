@@ -1,31 +1,135 @@
-/* Coaches page */
+/* ==========================================================================
+   Coaches page
 
-.coaches-list {
+   The source photos are small (340-412px wide) and come in mixed portrait and
+   landscape shapes. They are rendered in a fixed 200px column at their natural
+   aspect ratio, which means every one lands at 0.49-0.59x its native size —
+   still sharp at high zoom on a HiDPI screen — and nothing is ever cropped.
+   ========================================================================== */
+.coaches-grid {
   display: grid;
-  gap: 3rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
-.coach-item h2 {
-  margin-bottom: 1.25rem;
+.coach-card {
+  /* .card sets flex-direction: column — this row layout opts back out. */
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
-.coach-item img {
-  max-width: 220px;
-  object-fit: cover;
+/* --- Photo --------------------------------------------------------------- */
+.coach-card__photo {
+  flex: none;
+  width: 200px;
 }
 
-.coach-item .split-section {
-  grid-template-columns: 220px 1fr;
-  align-items: start;
+.coach-card__photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  box-shadow: var(--shadow-sm);
 }
 
-@media (max-width: 720px) {
-  .coach-item .split-section {
+/* --- Body ---------------------------------------------------------------- */
+.coach-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+/* The divider lives on the head block so every card gets one, whether or not
+   the coach has a role badge or a listed playing style. */
+.coach-card__head {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.coach-card__head h2 {
+  margin-bottom: 0;
+  font-size: 1.3rem;
+}
+
+.coach-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.coach-card__role {
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-full);
+  /* white on --accent is 4.36:1 — just under AA for text this size */
+  background: var(--accent-hover);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.coach-card__style {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.coach-card ul {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.coach-card li {
+  position: relative;
+  padding-left: 1.45rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.coach-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-top: -0.425rem;
+  border-radius: 50%;
+  background: var(--primary-soft)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b4fd8' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E")
+    center / 0.55rem no-repeat;
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .coaches-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
-  .coach-item img {
-    max-height: 60%;
+  .coach-card__photo {
+    width: 220px;
+  }
+}
+
+@media (max-width: 560px) {
+  .coach-card {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .coach-card__photo {
+    width: min(100%, 220px);
   }
 }

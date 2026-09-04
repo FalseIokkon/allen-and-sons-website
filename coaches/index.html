@@ -4,36 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coaches | Allen & Sons TTC</title>
-    <meta
-      name="description"
-      content="Meet our world-class coaches at Allen & Sons Table Tennis Club in Canoga Park, California."
-    />
+    <meta name="description" content="Meet the coaching team at Allen & Sons Table Tennis Club in Canoga Park, California — national champions, ITTF-certified coaches, and decades of experience." />
+    <meta name="theme-color" content="#0a1120" />
+    <link rel="canonical" href="https://mypingpongclub.com/coaches/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Allen &amp; Sons TTC" />
+    <meta property="og:title" content="Coaches | Allen & Sons TTC" />
+    <meta property="og:description" content="Meet the coaching team at Allen & Sons Table Tennis Club in Canoga Park, California — national champions, ITTF-certified coaches, and decades of experience." />
+    <meta property="og:url" content="https://mypingpongclub.com/coaches/" />
+
     <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="stylesheet" href="/src/styles/coaches.css" />
+    <script>
+      document.documentElement.classList.add("js");
+      // Failsafe: if the reveal script never runs, drop the class so that no
+      // content is left stuck at opacity 0.
+      setTimeout(function () {
+        var root = document.documentElement;
+        if (!root.hasAttribute("data-reveal-ready")) root.classList.remove("js");
+      }, 2500);
+    </script>
   </head>
-
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <div class="site-top">
+      <div class="announcement-bar" id="announcement" hidden>
+        <div class="announcement-inner">
+          <div id="announcement-container"></div>
+          <button
+            class="announcement-close"
+            type="button"
+            aria-label="Dismiss announcement"
+          >
+            ✕
+          </button>
+        </div>
+      </div>
+
       <header class="site-header">
         <div class="container header-inner">
-          <a href="/" class="logo">Allen & Sons TTC</a>
+          <a href="/" class="logo">
+            <span class="logo__text">
+              Allen &amp; Sons
+              <span class="logo__sub">Table Tennis Club</span>
+            </span>
+          </a>
 
           <button
             class="menu-toggle"
             type="button"
-            aria-label="Toggle menu"
+            aria-label="Open menu"
             aria-expanded="false"
             aria-controls="site-nav"
           >
-            ☰
+            <span></span><span></span><span></span>
           </button>
 
           <nav class="site-nav" id="site-nav" aria-label="Main navigation">
             <ul class="nav-list">
               <li><a href="/">Home</a></li>
               <li><a href="/about/">About</a></li>
-              <li><a href="/coaches/" class="active">Coaches</a></li>
+              <li><a href="/coaches/" class="active" aria-current="page">Coaches</a></li>
               <li><a href="/lessons/">Lessons</a></li>
               <!--<li><a href="/gallery/">Gallery</a></li>-->
               <li><a href="/contact/" class="nav-button">Contact</a></li>
@@ -41,108 +81,159 @@
           </nav>
         </div>
       </header>
-
-      <div class="announcement-bar" id="announcement" hidden>
-        <div class="announcement-inner">
-          <div id="announcement-container"></div>
-          <button class="announcement-close" aria-label="Close announcement">✕</button>
-        </div>
-      </div>
     </div>
+    <div class="nav-backdrop"></div>
 
-    <main>
-      <section class="page-hero-alt">
-        <div class="page-hero-alt-overlay">
-          <div class="container">
-            <p class="section-tag">Meet Our</p>
-            <h1>Coaches</h1>
+    <main id="main">
+      <section class="page-hero">
+        <div class="page-hero__media">
+          <img
+            src="/images/hero/storefront.avif"
+            alt=""
+            width="584"
+            height="438"
+            fetchpriority="high"
+          />
+        </div>
 
-            <div class="hero-actions">
-              <a href="/lessons/" class="button button-primary">Take a lesson!</a>
-            </div>
+        <div class="container page-hero__inner">
+          <p class="eyebrow eyebrow--light">Meet Our</p>
+          <h1>Coaches</h1>
+          <p class="page-hero__lede">National champions, ITTF-certified coaches, and decades of experience — available for players of every level.</p>
+
+          <div class="btn-row">
+            <a href="/lessons/" class="btn btn--primary">
+              Take a Lesson
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="/contact/#contact-form" class="btn btn--light">Book a Session</a>
           </div>
         </div>
       </section>
 
-      <section class="section section-alt" id="coaches-list">
-        <div class="container coaches-list">
-          <article class="coach-item">
-            <h2>Fovad Kaseb <span>(Club Owner)</span></h2>
-            <div class="split-section">
-              <div class="coach-image">
-                <img src="/images/coaches/fovad.avif" alt="Coach Fovad Kaseb" />
+      <section class="section section--alt" id="coaches-list">
+        <div class="container">
+          <div class="coaches-grid" data-stagger>
+            <article class="card card--hover coach-card" data-reveal>
+              <div class="coach-card__photo">
+                <img
+                  src="/images/coaches/fovad.avif"
+                  alt="Coach Fovad Kaseb"
+                  width="380"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div class="coach-details">
+              <div class="coach-card__body">
+                <div class="coach-card__head">
+                  <h2>Fovad Kaseb</h2>
+                  <div class="coach-card__meta">
+                    <span class="coach-card__role">Club Owner</span>
+                  </div>
+                </div>
                 <ul>
                   <li>1985, 1988, 1989 — Iranian National Champion.</li>
                   <li>1997 — West Asian Games Champion.</li>
                   <li>2000-2010 — Head Coach of the Iranian National Men's Table Tennis Team.</li>
                   <li>Certified ITTF High Performance Coach.</li>
                   <li>Certified US National Coach.</li>
-                  <li>2003-2010 — ATTU full member of Junior & Coaching Committee.</li>
+                  <li>2003-2010 — ATTU full member of Junior &amp; Coaching Committee.</li>
                 </ul>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="coach-item">
-            <h2>Dinh Nguyen</h2>
-            <div class="split-section">
-              <div class="coach-image">
-                <img src="/images/coaches/dinh.avif" alt="Coach Dinh Nguyen" />
+            <article class="card card--hover coach-card" data-reveal>
+              <div class="coach-card__photo">
+                <img
+                  src="/images/coaches/dinh.avif"
+                  alt="Coach Dinh Nguyen"
+                  width="372"
+                  height="436"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div class="coach-details">
+              <div class="coach-card__body">
+                <div class="coach-card__head">
+                  <h2>Dinh Nguyen</h2>
+                  <div class="coach-card__meta">
+                    <p class="coach-card__style">Style · Shakehands looper</p>
+                  </div>
+                </div>
                 <ul>
-                  <li>Style: Shakehands looper.</li>
                   <li>Former leader of the Vietnamese Junior National Team.</li>
                   <li>Created a system for teaching beginner-level players.</li>
                   <li>Over 22 years of coaching experience in the U.S.</li>
                 </ul>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="coach-item">
-            <h2>Bella Livshin</h2>
-            <div class="split-section">
-              <div class="coach-image">
-                <img src="/images/coaches/bella.avif" alt="Coach Bella Livshin" />
+            <article class="card card--hover coach-card" data-reveal>
+              <div class="coach-card__photo">
+                <img
+                  src="/images/coaches/bella.avif"
+                  alt="Coach Bella Livshin"
+                  width="412"
+                  height="488"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div class="coach-details">
+              <div class="coach-card__body">
+                <div class="coach-card__head">
+                  <h2>Bella Livshin</h2>
+                </div>
                 <ul>
                   <li>Coaching since 1968, making her our most experienced coach.</li>
                   <li>Won numerous US Open and US National titles in over-40, over-50, and over-60 groups.</li>
                   <li>Available to train players of all skill levels.</li>
                 </ul>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="coach-item">
-            <h2>Vahid Mosaferi</h2>
-            <div class="split-section">
-              <div class="coach-image">
-                <img src="/images/coaches/vahid.avif" alt="Coach Vahid Mosaferi" />
+            <article class="card card--hover coach-card" data-reveal>
+              <div class="coach-card__photo">
+                <img
+                  src="/images/coaches/vahid.avif"
+                  alt="Coach Vahid Mosaferi"
+                  width="357"
+                  height="234"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div class="coach-details">
+              <div class="coach-card__body">
+                <div class="coach-card__head">
+                  <h2>Vahid Mosaferi</h2>
+                  <div class="coach-card__meta">
+                    <p class="coach-card__style">Style · Shakehands looper</p>
+                  </div>
+                </div>
                 <ul>
-                  <li>Style: Shakehands looper.</li>
                   <li>International Table Tennis Federation (ITTF) Coach.</li>
                   <li>Over 20 years of international experience as a player and coach.</li>
                   <li>Iranian National Team player.</li>
                   <li>Played in multiple professional leagues.</li>
                 </ul>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="coach-item">
-            <h2>Kim Gilbert</h2>
-            <div class="split-section">
-              <div class="coach-image">
-                <img src="/images/coaches/kim.avif" alt="Coach Kim Gilbert" />
+            <article class="card card--hover coach-card" data-reveal>
+              <div class="coach-card__photo">
+                <img
+                  src="/images/coaches/kim.avif"
+                  alt="Coach Kim Gilbert"
+                  width="340"
+                  height="330"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div class="coach-details">
+              <div class="coach-card__body">
+                <div class="coach-card__head">
+                  <h2>Kim Gilbert</h2>
+                </div>
                 <ul>
                   <li>Kim is a professional table tennis champion and elite coach.</li>
                   <li>She is a three-time U.S. Olympic Festival Gold Medalist.</li>
@@ -150,18 +241,27 @@
                   <li>Kim is also the CEO of Pongstarz which produces and manages large scale ping pong themed events and celebrity fundraisers.</li>
                 </ul>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="coach-item">
-            <h2>Rudy Miranda</h2>
-            <div class="split-section">
-              <div class="coach-image">
-                <img src="/images/coaches/rudy.avif" alt="Coach Rudy Miranda" />
+            <article class="card card--hover coach-card" data-reveal>
+              <div class="coach-card__photo">
+                <img
+                  src="/images/coaches/rudy.avif"
+                  alt="Coach Rudy Miranda"
+                  width="402"
+                  height="342"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div class="coach-details">
+              <div class="coach-card__body">
+                <div class="coach-card__head">
+                  <h2>Rudy Miranda</h2>
+                  <div class="coach-card__meta">
+                    <p class="coach-card__style">Style · Two wing looper</p>
+                  </div>
+                </div>
                 <ul>
-                  <li>Style: Two wing looper.</li>
                   <li>Freelance table tennis coach for more than 20 years.</li>
                   <li>Competed Nationally and Internationally.</li>
                   <li>Was a member of the Nicaraguan International Team.</li>
@@ -169,8 +269,28 @@
                   <li>ITTF Certified Coach.</li>
                 </ul>
               </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel" data-reveal>
+            <div class="cta-panel__copy">
+              <p class="eyebrow">Ready when you are</p>
+              <h2>Train with a coach who fits your game</h2>
+              <p>
+                Private lessons run 30 or 60 minutes, and adult group classes run
+                four times a week. Reach out and we'll match you with a coach.
+              </p>
             </div>
-          </article>
+
+            <div class="btn-row">
+              <a href="/lessons/" class="btn btn--primary">See Lesson Options</a>
+              <a href="/contact/#contact-form" class="btn btn--light">Contact Us</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -178,36 +298,88 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <h3>Allen & Sons TTC</h3>
-          <p class="footer-address">
-            21915 Sherman Way<br />
-            Canoga Park, CA 91303
+          <a href="/" class="logo">
+            <span class="logo__text">
+              Allen &amp; Sons
+              <span class="logo__sub">Table Tennis Club</span>
+            </span>
+          </a>
+          <p>
+            Coaching, open play, and youth programs for every level — seven days
+            a week in Canoga Park, California.
           </p>
-          <p class="site-credit">
-            Site by
-            <!--<a href="https://jonathanyun.fyi" target="_blank" rel="noopener noreferrer">
-              Jonathan Yun
+
+          <div class="footer-social">
+            <a
+              href="https://www.youtube.com/@AllenandSons"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Allen &amp; Sons TTC on YouTube"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
             </a>
-            -->
-            Jonathan Yun
-          </p>
+            <a
+              href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Find us on Google Maps"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+            <a href="mailto:mypingpongclub@gmail.com" aria-label="Email the club">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
         </div>
 
-        <div class="footer-hours">
-          <h4>Hours</h4>
-          <p>Weekdays: 9 AM - 9:30 PM</p>
-          <p>Weekends: 9 AM - 4 PM</p>
-        </div>
-
-        <div class="footer-nav">
+        <div class="footer-col">
           <h4>Explore</h4>
           <ul>
-            <li><a href="/coaches/">Coaches</a></li>
             <li><a href="/about/">About</a></li>
+            <li><a href="/coaches/">Coaches</a></li>
             <li><a href="/lessons/">Lessons</a></li>
             <!--<li><a href="/gallery/">Gallery</a></li>-->
             <li><a href="/contact/">Contact</a></li>
           </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Weekdays<br />9 AM – 9:30 PM</p>
+          <p>Weekends<br />9 AM – 4 PM</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit &amp; Contact</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <a
+                href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                21915 Sherman Way<br />Canoga Park, CA 91303
+              </a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              <a href="tel:18183305756">(818) 330-5756</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <a href="mailto:mypingpongclub@gmail.com">
+                mypingpongclub@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© <span id="year">2026</span> Allen &amp; Sons Table Tennis Club</p>
+          <p class="site-credit">Site by Jonathan Yun</p>
         </div>
       </div>
     </footer>

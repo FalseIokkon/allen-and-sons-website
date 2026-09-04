@@ -4,29 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lessons | Allen & Sons TTC</title>
-    <meta
-      name="description"
-      content="Explore private lessons, adult group lessons, and kids camp at Allen & Sons Table Tennis Club in Canoga Park, California."
-    />
+    <meta name="description" content="Private lessons, adult group classes, and Saturday kids camp at Allen & Sons Table Tennis Club in Canoga Park, California." />
+    <meta name="theme-color" content="#0a1120" />
+    <link rel="canonical" href="https://mypingpongclub.com/lessons/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Allen &amp; Sons TTC" />
+    <meta property="og:title" content="Lessons | Allen & Sons TTC" />
+    <meta property="og:description" content="Private lessons, adult group classes, and Saturday kids camp at Allen & Sons Table Tennis Club in Canoga Park, California." />
+    <meta property="og:url" content="https://mypingpongclub.com/lessons/" />
+
     <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="stylesheet" href="/src/styles/lessons.css" />
+    <script>
+      document.documentElement.classList.add("js");
+      // Failsafe: if the reveal script never runs, drop the class so that no
+      // content is left stuck at opacity 0.
+      setTimeout(function () {
+        var root = document.documentElement;
+        if (!root.hasAttribute("data-reveal-ready")) root.classList.remove("js");
+      }, 2500);
+    </script>
   </head>
-
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <div class="site-top">
+      <div class="announcement-bar" id="announcement" hidden>
+        <div class="announcement-inner">
+          <div id="announcement-container"></div>
+          <button
+            class="announcement-close"
+            type="button"
+            aria-label="Dismiss announcement"
+          >
+            ✕
+          </button>
+        </div>
+      </div>
+
       <header class="site-header">
         <div class="container header-inner">
-          <a href="/" class="logo">Allen & Sons TTC</a>
+          <a href="/" class="logo">
+            <span class="logo__text">
+              Allen &amp; Sons
+              <span class="logo__sub">Table Tennis Club</span>
+            </span>
+          </a>
 
           <button
             class="menu-toggle"
             type="button"
-            aria-label="Toggle menu"
+            aria-label="Open menu"
             aria-expanded="false"
             aria-controls="site-nav"
           >
-            ☰
+            <span></span><span></span><span></span>
           </button>
 
           <nav class="site-nav" id="site-nav" aria-label="Main navigation">
@@ -34,168 +74,259 @@
               <li><a href="/">Home</a></li>
               <li><a href="/about/">About</a></li>
               <li><a href="/coaches/">Coaches</a></li>
-              <li><a href="/lessons/" class="active">Lessons</a></li>
+              <li><a href="/lessons/" class="active" aria-current="page">Lessons</a></li>
               <!--<li><a href="/gallery/">Gallery</a></li>-->
               <li><a href="/contact/" class="nav-button">Contact</a></li>
             </ul>
           </nav>
         </div>
       </header>
-
-      <div class="announcement-bar" id="announcement" hidden>
-        <div class="announcement-inner">
-          <div id="announcement-container"></div>
-          <button class="announcement-close" aria-label="Close announcement">✕</button>
-        </div>
-      </div>
     </div>
+    <div class="nav-backdrop"></div>
 
-    <main>
-      <section class="page-hero-alt">
-        <div class="page-hero-alt-overlay">
-          <div class="container">
-            <p class="section-tag">Train With Us</p>
-            <h1>Lessons</h1>
-          </div>
+    <main id="main">
+      <section class="page-hero">
+        <div class="page-hero__media">
+          <img
+            src="/images/hero/storefront.avif"
+            alt=""
+            width="584"
+            height="438"
+            fetchpriority="high"
+          />
+        </div>
+
+        <div class="container page-hero__inner">
+          <p class="eyebrow eyebrow--light">Train With Us</p>
+          <h1>Lessons</h1>
+          <p class="page-hero__lede">One-on-one coaching, weekly adult group classes, and a Saturday camp for kids ages 7–15.</p>
         </div>
       </section>
 
+      <!-- ======================= Private coaching ======================= -->
       <section class="section" id="private-coaching">
         <div class="container">
-          <div class="section-heading">
-            <p class="section-tag">Private Coaching</p>
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Private Coaching</p>
             <h2>One-on-one lessons</h2>
+            <p>
+              Work directly with one of our coaches on technique, footwork, and
+              match play at your own pace.
+            </p>
           </div>
 
-          <div class="card-grid card-grid-three">
-            <article class="card">
+          <div class="grid grid--3" data-stagger>
+            <article class="card card--hover lesson-card" data-reveal>
+              <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
               <h3>30 Minute Lesson</h3>
-              <p>$45</p>
+              <p class="lesson-card__price">$45 <small>per lesson</small></p>
+              <p>A focused session — great for drilling one or two specific skills.</p>
             </article>
 
-            <article class="card">
+            <article class="card card--hover lesson-card" data-reveal>
+              <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></div>
               <h3>60 Minute Lesson</h3>
-              <p>$80</p>
+              <p class="lesson-card__price">$80 <small>per lesson</small></p>
+              <p>A full session with time for warm-up, drills, and match practice.</p>
             </article>
 
-            <article class="card">
+            <article class="card card--hover lesson-card lesson-card--cta" data-reveal>
+              <div class="card__icon card__icon--accent" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></div>
               <h3>Appointments</h3>
               <p>
-                Use our <a href="/contact/#contact-form" class="text-link">Contact Form</a> to ask about an Appointment or ask a question.<br />
+                Use our contact form to ask about an appointment, check coach
+                availability, or ask a question.
               </p>
+              <div class="section-action">
+                <a href="/contact/#contact-form" class="btn btn--primary">Request a Time</a>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-alt">
+      <!-- ====================== Adult group lessons ====================== -->
+      <section class="section section--alt" id="group-lessons">
         <div class="container">
-          <div class="section-heading">
-            <p class="section-tag">Adult Group Lessons</p>
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Adult Group Lessons</p>
             <h2>Weekly schedule</h2>
+            <p>$35 per class · capacity limited to 12 students.</p>
           </div>
 
-          <div class="card-grid card-grid-four">
-            <article class="card">
-              <h3>Monday</h3>
-              <p>10 AM - 12 PM</p>
-              <p>Coach Bella</p>
+          <div class="grid grid--4" data-stagger>
+            <article class="card card--hover schedule-card" data-reveal>
+              <p class="schedule-card__day">Monday</p>
+              <div class="schedule-card__body">
+                <p class="schedule-card__time">10 AM – 12 PM</p>
+                <p class="schedule-card__coach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Coach Bella</p>
+              </div>
             </article>
 
-            <article class="card">
-              <h3>Monday</h3>
-              <p>7 PM - 9 PM</p>
-              <p>Coach Dinh</p>
+            <article class="card card--hover schedule-card" data-reveal>
+              <p class="schedule-card__day">Monday</p>
+              <div class="schedule-card__body">
+                <p class="schedule-card__time">7 PM – 9 PM</p>
+                <p class="schedule-card__coach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Coach Dinh</p>
+              </div>
             </article>
 
-            <article class="card">
-              <h3>Wednesday</h3>
-              <p>10 AM - 12 PM</p>
-              <p>Coach Bella</p>
+            <article class="card card--hover schedule-card" data-reveal>
+              <p class="schedule-card__day">Wednesday</p>
+              <div class="schedule-card__body">
+                <p class="schedule-card__time">10 AM – 12 PM</p>
+                <p class="schedule-card__coach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Coach Bella</p>
+              </div>
             </article>
 
-            <article class="card">
-              <h3>Friday</h3>
-              <p>10 AM - 12 PM</p>
-              <p>Coach Rudy</p>
+            <article class="card card--hover schedule-card" data-reveal>
+              <p class="schedule-card__day">Friday</p>
+              <div class="schedule-card__body">
+                <p class="schedule-card__time">10 AM – 12 PM</p>
+                <p class="schedule-card__coach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Coach Rudy</p>
+              </div>
             </article>
           </div>
 
-          <p class="lesson-note">
-            Classes are $35 per class. Capacity is limited to 12 students. Lesson fees do not include the floor fee, which must be paid if the player continues playing at the club after the lesson.
+          <p class="note" data-reveal>
+            Classes are $35 per class. Capacity is limited to 12 students. Lesson
+            fees do not include the floor fee, which must be paid if the player
+            continues playing at the club after the lesson.
           </p>
         </div>
       </section>
 
-      <section id="kids-camp" class="section">
-        <div class="container split-section lessons-camp">
-          <div>
-            <p class="section-tag">Kids Camp</p>
-            <h2>Saturday table tennis camp for ages 7-15</h2>
+      <!-- =========================== Kids camp =========================== -->
+      <section class="section" id="kids-camp">
+        <div class="container">
+          <div class="split">
+            <div class="prose" data-reveal>
+              <p class="eyebrow">Kids Camp</p>
+              <h2>Saturday table tennis camp for ages 7–15</h2>
 
-            <ul>
-              <li>Held every Saturday from 4 PM to 6 PM</li>
-              <li>Three coaches per session</li>
-              <li>For kids ages 7-15</li>
-              <li>$40 per student, per class</li>
-              <li>Prizes and free kid's meal</li>
-              <li>Kids tournament on the last Saturday of each month</li>
-            </ul>
+              <ul>
+                <li>Held every Saturday from 4 PM to 6 PM</li>
+                <li>Three coaches per session</li>
+                <li>For kids ages 7-15</li>
+                <li>$40 per student, per class</li>
+                <li>Prizes and free kid's meal</li>
+                <li>Kids tournament on the last Saturday of each month</li>
+              </ul>
 
-            <p>
-              Contact Kim Gilbert at
-              <a href="mailto:pingpongkimi@gmail.com" class="text-link">
-                pingpongkimi@gmail.com
-              </a>
-              or
-              <a href="tel:13106214923" class="text-link">(310) 621-4923</a>.
-            </p>
-          </div>
+              <p>Contact Kim Gilbert to sign up or ask a question:</p>
 
-          <div>
-            <img
-              src="/images/flyer.avif"
-              alt="Kids camp flyer for Allen & Sons Table Tennis Club"
-              class="full-width-image"
-            />
+              <div class="camp-contact">
+                <a href="mailto:pingpongkimi@gmail.com">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  pingpongkimi@gmail.com
+                </a>
+                <a href="tel:13106214923">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                  (310) 621-4923
+                </a>
+              </div>
+            </div>
+
+            <div class="camp-flyer" data-reveal>
+              <img
+                src="/images/flyer.avif"
+                alt="Kids camp flyer for Allen &amp; Sons Table Tennis Club"
+                width="1596"
+                height="2069"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-     <footer class="site-footer">
+    <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <h3>Allen & Sons TTC</h3>
-          <p class="footer-address">
-            21915 Sherman Way<br />
-            Canoga Park, CA 91303
+          <a href="/" class="logo">
+            <span class="logo__text">
+              Allen &amp; Sons
+              <span class="logo__sub">Table Tennis Club</span>
+            </span>
+          </a>
+          <p>
+            Coaching, open play, and youth programs for every level — seven days
+            a week in Canoga Park, California.
           </p>
-          <p class="site-credit">
-            Site by
-            <!--<a href="https://jonathanyun.fyi" target="_blank" rel="noopener noreferrer">
-              Jonathan Yun
+
+          <div class="footer-social">
+            <a
+              href="https://www.youtube.com/@AllenandSons"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Allen &amp; Sons TTC on YouTube"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
             </a>
-            -->
-            Jonathan Yun
-          </p>
+            <a
+              href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Find us on Google Maps"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+            <a href="mailto:mypingpongclub@gmail.com" aria-label="Email the club">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
         </div>
 
-        <div class="footer-hours">
-          <h4>Hours</h4>
-          <p>Weekdays: 9 AM - 9:30 PM</p>
-          <p>Weekends: 9 AM - 4 PM</p>
-        </div>
-
-        <div class="footer-nav">
+        <div class="footer-col">
           <h4>Explore</h4>
           <ul>
-            <li><a href="/coaches/">Coaches</a></li>
             <li><a href="/about/">About</a></li>
+            <li><a href="/coaches/">Coaches</a></li>
             <li><a href="/lessons/">Lessons</a></li>
             <!--<li><a href="/gallery/">Gallery</a></li>-->
             <li><a href="/contact/">Contact</a></li>
           </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Weekdays<br />9 AM – 9:30 PM</p>
+          <p>Weekends<br />9 AM – 4 PM</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit &amp; Contact</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <a
+                href="https://maps.app.goo.gl/eu4X9X9Y2jSU1G8t7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                21915 Sherman Way<br />Canoga Park, CA 91303
+              </a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              <a href="tel:18183305756">(818) 330-5756</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <a href="mailto:mypingpongclub@gmail.com">
+                mypingpongclub@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© <span id="year">2026</span> Allen &amp; Sons Table Tennis Club</p>
+          <p class="site-credit">Site by Jonathan Yun</p>
         </div>
       </div>
     </footer>

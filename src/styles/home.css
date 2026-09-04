@@ -1,90 +1,119 @@
-/* Home page hero */
-.home-hero {
-  background: url("/images/hero/club-hero.avif") center center / cover no-repeat;
+/* ==========================================================================
+   Home page
+   ========================================================================== */
+
+/* --- Stat strip overlapping the hero ------------------------------------- */
+.stats-section {
+  position: relative;
+  margin-top: -3.5rem;
+  padding-block: 0;
+  z-index: 2;
 }
 
-.home-hero-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(10, 20, 35, 0.68) 0%,
-    rgba(10, 20, 35, 0.56) 100%
-  );
+@media (max-width: 640px) {
+  .stats-section {
+    margin-top: -2rem;
+  }
 }
 
-.home-hero-content {
-  min-height: 520px;
-  display: flex;
-  align-items: center;
-  padding: 5rem 0;
-}
-
-.home-hero-copy {
-  max-width: 680px;
-  color: #ffffff;
-}
-
-.home-hero-copy h1 {
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 0.96;
-  margin-bottom: 1rem;
-  letter-spacing: -0.03em;
-}
-
-.home-hero-tagline {
-  max-width: 560px;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.88);
-  margin-bottom: 1.5rem;
-}
-
-/* Club shop image stack */
-.shop-image-stack {
-  display: flex;
-  flex-direction: column;
+/* --- Club shop ----------------------------------------------------------- */
+.shop-media {
+  display: grid;
   gap: 1rem;
-  padding-top: 1.5rem;
 }
 
-.shop-brand-logo {
-  max-height: none;
+.shop-media__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.shop-media .media-frame img {
+  aspect-ratio: 16 / 9;
+}
+
+.shop-media__row .media-frame img {
+  aspect-ratio: 4 / 3;
+}
+
+.shop-brand {
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--speed) var(--ease-out),
+    box-shadow var(--speed) ease, border-color var(--speed) ease;
+}
+
+.shop-brand:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.shop-brand img {
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
-.shop-image-stack a {
-  align-self: center;
-  width: 70%;
+/* --- Live stream --------------------------------------------------------- */
+.live-panel {
+  background: linear-gradient(135deg, #1a1030 0%, #2a0f18 55%, #0a1120 100%);
 }
 
-/* Home gallery preview */
-.home-gallery-preview {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 1rem;
+/* Glass variant of the CTA panel, for use on dark sections */
+.cta-panel--glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  box-shadow: none;
 }
 
-.home-gallery-preview img {
-  height: 320px;
-  object-fit: cover;
-  box-shadow: var(--shadow);
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
 }
 
-@media (max-width: 720px) {
-  .home-gallery-preview {
-    grid-template-columns: 1fr;
-  }
+.live-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff4d4d;
+  box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7);
+  animation: live-pulse 2s infinite;
+}
 
-  .home-gallery-preview img {
-    height: auto;
+@keyframes live-pulse {
+  70% {
+    box-shadow: 0 0 0 9px rgba(255, 77, 77, 0);
   }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 77, 0);
+  }
+}
 
-  .home-hero-content {
-    min-height: 420px;
-    padding: 4rem 0;
-  }
+/* --- Venue / events cards ------------------------------------------------ */
+.venue-card {
+  padding: 2rem;
+}
 
-  .home-hero-copy h1 {
-    line-height: 1;
-  }
+.venue-card h3 {
+  font-size: 1.35rem;
 }

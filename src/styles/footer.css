@@ -1,80 +1,172 @@
-/* 1. Footer (Site Bottom Section)
-   1.1 Overall footer styling */
+/* ==========================================================================
+   Site footer
+   ========================================================================== */
 .site-footer {
-  background: #101923;
-  color: #d7e0ea;
-  padding: 3rem 0;
+  position: relative;
+  background: var(--ink);
+  color: var(--text-inverse-muted);
+  padding-top: clamp(3rem, 2rem + 3vw, 4.5rem);
 }
 
-/* 2. Footer Layout
-   2.1 Grid layout for footer columns */
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
 }
 
-/* 3. Footer Typography
-   3.1 Headings inside footer */
 .site-footer h3,
 .site-footer h4 {
-  color: #ffffff;
+  color: #fff;
 }
 
-/* 3.2 Spacing for footer text elements */
-.footer-address,
-.footer-phone,
-.footer-email,
-.footer-hours p,
-.footer-nav li {
-  margin-bottom: 0.5rem;
-}
-
-/* 4. Footer Navigation
-   4.1 Default link color */
-.footer-nav a {
-  color: #d7e0ea;
-}
-
-/* 4.2 Hover state for links */
-.footer-nav a:hover {
-  color: #ffffff;
-}
-
-.site-credit {
-  margin-top: 1rem;
-  margin-bottom: 0;
+.site-footer h4 {
+  margin-bottom: 1.1rem;
   font-size: 0.78rem;
-  color: rgba(215, 224, 234, 0.72);
-  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.site-footer p {
+  margin-bottom: 0.4rem;
+  font-size: 0.94rem;
+}
+
+/* --- Brand column -------------------------------------------------------- */
+.footer-brand .logo {
+  color: #fff;
+  margin-bottom: 1.1rem;
+}
+
+.footer-brand p {
+  max-width: 34ch;
+  line-height: 1.7;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.footer-social a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.75);
+  transition: background var(--speed) ease, color var(--speed) ease,
+    border-color var(--speed) ease, transform var(--speed) var(--ease-out);
+}
+
+.footer-social a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-social svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* --- Link / info columns ------------------------------------------------- */
+.footer-col ul {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.footer-col a {
+  display: inline-block;
+  padding-block: 0.35rem;
+  font-size: 0.94rem;
+  color: var(--text-inverse-muted);
+  transition: color var(--speed) ease;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+/* keeps these comfortably above the 24px minimum target size on phones */
+.footer-contact a {
+  display: inline-block;
+  padding-block: 0.3rem;
+}
+
+.footer-contact svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  margin-top: 0.2rem;
+  color: #ff9b93;
+}
+
+/* --- Bottom bar ---------------------------------------------------------- */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.footer-bottom-inner p {
+  margin: 0;
+  font-size: inherit;
 }
 
 .site-credit a {
   color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(215, 224, 234, 0.28);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  transition: color var(--speed) ease, border-color var(--speed) ease;
 }
 
 .site-credit a:hover {
-  color: #ffffff;
+  color: #fff;
   border-bottom-color: rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 720px) {
-  .site-footer {
-    font-size: 0.85rem;
+/* --- Responsive ---------------------------------------------------------- */
+@media (max-width: 980px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
   }
 
-  .site-footer h3 {
-    font-size: 0.95rem;
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 
-  .site-footer h4 {
-    font-size: 0.9rem;
-  }
-
-  .site-credit {
-    font-size: 0.7rem;
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
   }
 }
